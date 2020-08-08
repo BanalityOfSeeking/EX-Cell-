@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespace_e_x_cell_1_1_data_structure" kind="namespace">
+    <compoundname>EXCell::DataStructure</compoundname>
+    <innerclass refid="class_e_x_cell_1_1_data_structure_1_1_param_builder" prot="public">EXCell::DataStructure::ParamBuilder</innerclass>
+    <innerclass refid="class_e_x_cell_1_1_data_structure_1_1_param" prot="public">EXCell::DataStructure::Param</innerclass>
+    <innerclass refid="struct_e_x_cell_1_1_data_structure_1_1_cell" prot="public">EXCell::DataStructure::Cell</innerclass>
+    <innerclass refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row" prot="public">EXCell::DataStructure::ReadOnlyRow</innerclass>
+    <innerclass refid="class_e_x_cell_1_1_data_structure_1_1_sheet" prot="public">EXCell::DataStructure::Sheet</innerclass>
+    <innerclass refid="class_e_x_cell_1_1_data_structure_1_1_workbook" prot="public">EXCell::DataStructure::Workbook</innerclass>
+    <innerclass refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell" prot="public">EXCell::DataStructure::ICell</innerclass>
+    <innerclass refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet" prot="public">EXCell::DataStructure::ISheet</innerclass>
+    <innerclass refid="class_e_x_cell_1_1_data_structure_1_1_list_value" prot="public">EXCell::DataStructure::ListValue</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Cell.cs" line="6" column="1"/>
+  </compounddef>
+</doxygen>

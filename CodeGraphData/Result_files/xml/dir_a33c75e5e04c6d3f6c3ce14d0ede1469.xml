@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_a33c75e5e04c6d3f6c3ce14d0ede1469" kind="dir">
+    <compoundname>C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader</compoundname>
+    <innerfile refid="_injector_8cs">Injector.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/"/>
+  </compounddef>
+</doxygen>

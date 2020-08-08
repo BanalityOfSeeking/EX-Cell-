@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_0205329918ed3289f0318c5f6e7a1cd8" kind="dir">
+    <compoundname>C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure</compoundname>
+    <innerfile refid="_cell_8cs">Cell.cs</innerfile>
+    <innerfile refid="_row_8cs">Row.cs</innerfile>
+    <innerfile refid="_sheet_8cs">Sheet.cs</innerfile>
+    <innerfile refid="_workbook_8cs">Workbook.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/"/>
+  </compounddef>
+</doxygen>

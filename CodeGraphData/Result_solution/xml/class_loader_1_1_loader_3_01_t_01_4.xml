@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_loader_1_1_loader_3_01_t_01_4" kind="class" prot="public" abstract="yes">
+    <compoundname>Loader::Loader&lt; T &gt;</compoundname>
+    <basecompoundref refid="interface_loader_1_1_i_loader_3_01_t_01_4" prot="public" virt="non-virtual">Loader.ILoader&lt; T &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_loader_1_1_loader_3_01_t_01_4_1afcbcbcfffa36ea20352210722c96400c" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>IList&lt; T &gt;</type>
+        <definition>IList&lt;T&gt; Loader.Loader&lt; T &gt;.Items</definition>
+        <argsstring></argsstring>
+        <name>Items</name>
+        <briefdescription>
+<para>This class stores all configuration data in it, it is appendable at runtime and queryable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" line="11" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_loader_1_1_loader_3_01_t_01_4_1ae8992b06a14d560edce29d0f9ca1228e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Loader.Loader&lt; T &gt;.Loader</definition>
+        <argsstring>()</argsstring>
+        <name>Loader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" line="13" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" bodystart="13" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_loader_1_1_loader_3_01_t_01_4_1a8fbb5bf33aa7414229fc224750d1311f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract DataSet</type>
+        <definition>abstract DataSet Loader.Loader&lt; T &gt;.Load</definition>
+        <argsstring>(string filePath)</argsstring>
+        <name>Load</name>
+        <reimplements refid="interface_loader_1_1_i_loader_3_01_t_01_4_1aee87b037d677862e2ea7b3140effa78c">Load</reimplements>
+        <param>
+          <type>string</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Load Settings.xml into DataSet and parses it into settings. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>settings</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_loader_1_1_loader_3_01_t_01_4_1afbb433ada8f10c1d91c66fc8e087b029" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator&lt; T &gt;</type>
+        <definition>IEnumerator&lt;T&gt; Loader.Loader&lt; T &gt;.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <reimplements refid="interface_loader_1_1_i_loader_3_01_t_01_4_1ab8bcdacb9e67b1d2b3d30868ceb4f403">GetEnumerator</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" line="24" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" bodystart="24" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="34">
+        <label>Loader.Loader&lt; T &gt;</label>
+        <link refid="class_loader_1_1_loader_3_01_t_01_4"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ILoader&lt; T &gt;</label>
+        <link refid="interface_loader_1_1_i_loader_3_01_t_01_4"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="36">
+        <label>Loader.Loader&lt; T &gt;</label>
+        <link refid="class_loader_1_1_loader_3_01_t_01_4"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ILoader&lt; T &gt;</label>
+        <link refid="interface_loader_1_1_i_loader_3_01_t_01_4"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" line="7" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/Loader.cs" bodystart="6" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_loader_1_1_loader_3_01_t_01_4_1afbb433ada8f10c1d91c66fc8e087b029" prot="public" virt="non-virtual"><scope>Loader::Loader&lt; T &gt;</scope><name>GetEnumerator</name></member>
+      <member refid="class_loader_1_1_loader_3_01_t_01_4_1afcbcbcfffa36ea20352210722c96400c" prot="public" virt="non-virtual"><scope>Loader::Loader&lt; T &gt;</scope><name>Items</name></member>
+      <member refid="class_loader_1_1_loader_3_01_t_01_4_1a8fbb5bf33aa7414229fc224750d1311f" prot="public" virt="pure-virtual"><scope>Loader::Loader&lt; T &gt;</scope><name>Load</name></member>
+      <member refid="class_loader_1_1_loader_3_01_t_01_4_1ae8992b06a14d560edce29d0f9ca1228e" prot="protected" virt="non-virtual"><scope>Loader::Loader&lt; T &gt;</scope><name>Loader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

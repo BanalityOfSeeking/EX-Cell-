@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespace_e_x_cell_1_1_layouts" kind="namespace">
+    <compoundname>EXCell::Layouts</compoundname>
+    <innerclass refid="interface_e_x_cell_1_1_layouts_1_1_i_layout" prot="public">EXCell::Layouts::ILayout</innerclass>
+    <innerclass refid="class_e_x_cell_1_1_layouts_1_1_layout" prot="public">EXCell::Layouts::Layout</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/ILayout.cs" line="19" column="1"/>
+  </compounddef>
+</doxygen>

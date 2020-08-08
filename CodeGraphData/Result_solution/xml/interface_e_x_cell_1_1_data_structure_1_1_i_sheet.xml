@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet" kind="interface" prot="public">
+    <compoundname>EXCell::DataStructure::ISheet</compoundname>
+    <derivedcompoundref refid="class_e_x_cell_1_1_data_structure_1_1_sheet" prot="public" virt="non-virtual">EXCell.DataStructure.Sheet</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1ad30fcf5051e7360c7150e03f1f06aeaf" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>bool</type>
+        <definition>bool EXCell.DataStructure.ISheet.ContainsListCollection</definition>
+        <argsstring></argsstring>
+        <name>ContainsListCollection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="13" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a85bcca2620f00b928c3d0dd35ab66d34" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>bool</type>
+        <definition>bool EXCell.DataStructure.ISheet.IsInitialized</definition>
+        <argsstring></argsstring>
+        <name>IsInitialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="14" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a92db078fae7002368d9cde89e06349ac" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>DataTable</type>
+        <definition>DataTable EXCell.DataStructure.ISheet.SheetTable</definition>
+        <argsstring></argsstring>
+        <name>SheetTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="15" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="event">
+      <memberdef kind="event" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a5ef2d2f9064a2794b3db4ae0b49bb4fd" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>EventHandler</type>
+        <definition>EventHandler EXCell.DataStructure.ISheet.Initialized</definition>
+        <argsstring></argsstring>
+        <name>Initialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="17" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a325b4b01561c99759c2fb498f1f9fc00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.DataStructure.ISheet.BeginInit</definition>
+        <argsstring>()</argsstring>
+        <name>BeginInit</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1a2edf3c1a31cf7bb860cea200da672034">BeginInit</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a5dd2b9dc28c1e0295cf3c02d4b00e3a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_e_x_cell_1_1_data_structure_1_1_sheet" kindref="compound">Sheet</ref></type>
+        <definition>Sheet EXCell.DataStructure.ISheet.CreateFirstRow</definition>
+        <argsstring>()</argsstring>
+        <name>CreateFirstRow</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1a820a69a2412d2955ad11fc677a50637c">CreateFirstRow</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1afc4c8a425ad0de75e4dd1b0c04340f9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.DataStructure.ISheet.EndInit</definition>
+        <argsstring>()</argsstring>
+        <name>EndInit</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1a426bc3fe3a19e001056f898d926be52f">EndInit</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1ad985ac5c45362554b4efee775ce0ec4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IList</type>
+        <definition>IList EXCell.DataStructure.ISheet.GetList</definition>
+        <argsstring>()</argsstring>
+        <name>GetList</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1ad516c283ce6184d92f8a2b9ace938932">GetList</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a53957f9299c84ba27595275746226de3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.DataStructure.ISheet.GetObjectData</definition>
+        <argsstring>(SerializationInfo info, StreamingContext context)</argsstring>
+        <name>GetObjectData</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1aa077b201183adf5fe79e804ad6ed90cb">GetObjectData</reimplementedby>
+        <param>
+          <type>SerializationInfo</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>StreamingContext</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1ae4d60eac51a9ff26488582fad30f6ea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>XmlSchema</type>
+        <definition>XmlSchema EXCell.DataStructure.ISheet.GetSchema</definition>
+        <argsstring>()</argsstring>
+        <name>GetSchema</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1a8ede1ad16c88edb8a40ed2a7986d2b33">GetSchema</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a54f3c85df0351f6987ec514bc631f349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_e_x_cell_1_1_data_structure_1_1_sheet" kindref="compound">Sheet</ref></type>
+        <definition>Sheet EXCell.DataStructure.ISheet.LoadParams</definition>
+        <argsstring>(List&lt; Param &gt; items)</argsstring>
+        <name>LoadParams</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1aa3ea95397d4d1a8751921a908f2501cb">LoadParams</reimplementedby>
+        <param>
+          <type>List&lt; <ref refid="class_e_x_cell_1_1_data_structure_1_1_param" kindref="compound">Param</ref> &gt;</type>
+          <declname>items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1aab48798ed4f6fe645d706b90df48fac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.DataStructure.ISheet.ReadXml</definition>
+        <argsstring>(XmlReader reader)</argsstring>
+        <name>ReadXml</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1ae3d7ba7e69862c4ed1b1d32ab4d1a612">ReadXml</reimplementedby>
+        <param>
+          <type>XmlReader</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a70ca50977f6f1aff01685fa527f290b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.DataStructure.ISheet.WriteXml</definition>
+        <argsstring>(XmlWriter writer)</argsstring>
+        <name>WriteXml</name>
+        <reimplementedby refid="class_e_x_cell_1_1_data_structure_1_1_sheet_1afa3044b2dbef5ad17112328fbb9fa1df">WriteXml</reimplementedby>
+        <param>
+          <type>XmlWriter</type>
+          <declname>writer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="27" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="26">
+        <label>EXCell.DataStructure.Sheet</label>
+        <link refid="class_e_x_cell_1_1_data_structure_1_1_sheet"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>EXCell.DataStructure.ISheet</label>
+        <link refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" line="12" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ISheet.cs" bodystart="11" bodyend="28"/>
+    <listofallmembers>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a325b4b01561c99759c2fb498f1f9fc00" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>BeginInit</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1ad30fcf5051e7360c7150e03f1f06aeaf" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>ContainsListCollection</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a5dd2b9dc28c1e0295cf3c02d4b00e3a8" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>CreateFirstRow</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1afc4c8a425ad0de75e4dd1b0c04340f9f" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>EndInit</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1ad985ac5c45362554b4efee775ce0ec4b" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>GetList</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a53957f9299c84ba27595275746226de3" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>GetObjectData</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1ae4d60eac51a9ff26488582fad30f6ea8" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>GetSchema</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a5ef2d2f9064a2794b3db4ae0b49bb4fd" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>Initialized</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a85bcca2620f00b928c3d0dd35ab66d34" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>IsInitialized</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a54f3c85df0351f6987ec514bc631f349" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>LoadParams</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1aab48798ed4f6fe645d706b90df48fac1" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>ReadXml</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a92db078fae7002368d9cde89e06349ac" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>SheetTable</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_sheet_1a70ca50977f6f1aff01685fa527f290b4" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ISheet</scope><name>WriteXml</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespace_e_x_cell" kind="namespace">
+    <compoundname>EXCell</compoundname>
+    <innerclass refid="class_e_x_cell_1_1_program" prot="package">EXCell::Program</innerclass>
+    <innernamespace refid="namespace_e_x_cell_1_1_configuration_store">EXCell::ConfigurationStore</innernamespace>
+    <innernamespace refid="namespace_e_x_cell_1_1_data_structure">EXCell::DataStructure</innernamespace>
+    <innernamespace refid="namespace_e_x_cell_1_1_layouts">EXCell::Layouts</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

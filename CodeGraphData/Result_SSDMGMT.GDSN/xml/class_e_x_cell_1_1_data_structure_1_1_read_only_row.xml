@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_e_x_cell_1_1_data_structure_1_1_read_only_row" kind="class" prot="public">
+    <compoundname>EXCell::DataStructure::ReadOnlyRow</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a229dca90f86b7e574e9f382149d758dd" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>int</type>
+        <definition>int EXCell.DataStructure.ReadOnlyRow.RowId</definition>
+        <argsstring></argsstring>
+        <name>RowId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="10" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a13d19e66320a2b8d3f59156ddb2fd391" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>ReadOnlyCollection&lt; <ref refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell" kindref="compound">ICell</ref> &gt;</type>
+        <definition>ReadOnlyCollection&lt;ICell&gt; EXCell.DataStructure.ReadOnlyRow.Cells</definition>
+        <argsstring></argsstring>
+        <name>Cells</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="42" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a4b466034458f0aa348d7bc181dc61874" prot="package" static="no" mutable="no">
+        <type><ref refid="interface_e_x_cell_1_1_configuration_store_1_1_i_row_layout_manager" kindref="compound">IRowLayoutManager</ref></type>
+        <definition>IRowLayoutManager EXCell.DataStructure.ReadOnlyRow.Manager</definition>
+        <argsstring></argsstring>
+        <name>Manager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="11" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a1a104ad8b338701b4f4ecf8685d54d57" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EXCell.DataStructure.ReadOnlyRow.Config</definition>
+        <argsstring></argsstring>
+        <name>Config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="44" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a2d8bbeed1536799cea700367cfff4f4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EXCell.DataStructure.ReadOnlyRow.ReadOnlyRow</definition>
+        <argsstring>(IRowLayoutManager manager, ICellConfiguration configuration)</argsstring>
+        <name>ReadOnlyRow</name>
+        <param>
+          <type><ref refid="interface_e_x_cell_1_1_configuration_store_1_1_i_row_layout_manager" kindref="compound">IRowLayoutManager</ref></type>
+          <declname>manager</declname>
+        </param>
+        <param>
+          <type><ref refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration" kindref="compound">ICellConfiguration</ref></type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="13" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="13" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1aa7db2d98792eb54b3de27473d3abbe60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row" kindref="compound">ReadOnlyRow</ref></type>
+        <definition>ReadOnlyRow EXCell.DataStructure.ReadOnlyRow.UpdateCellInRow</definition>
+        <argsstring>(string Name, string Value)</argsstring>
+        <name>UpdateCellInRow</name>
+        <param>
+          <type>string</type>
+          <declname>Name</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>Value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="25" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="25" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a8a89947c8d93becb6bc5bef9cd205c28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator&lt; <ref refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell" kindref="compound">ICell</ref> &gt;</type>
+        <definition>IEnumerator&lt;ICell&gt; EXCell.DataStructure.ReadOnlyRow.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="63" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a42839c77d08d3aef8f582556fd92cb0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int EXCell.DataStructure.ReadOnlyRow.IndexOf</definition>
+        <argsstring>(string Name)</argsstring>
+        <name>IndexOf</name>
+        <param>
+          <type>string</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="68" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="68" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a2a792b4a5b93687e36e10c7b546df2f3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool bool <ref refid="struct_e_x_cell_1_1_data_structure_1_1_cell" kindref="compound">Cell</ref></type>
+        <definition>bool bool Cell EXCell.DataStructure.ReadOnlyRow.Contains</definition>
+        <argsstring>(string Name)</argsstring>
+        <name>Contains</name>
+        <param>
+          <type>string</type>
+          <declname>Name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="44" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="44" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="45">
+        <label>EXCell.DataStructure.ReadOnlyRow</label>
+        <link refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row"/>
+        <childnode refid="46" relation="usage">
+          <edgelabel>Manager</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>EXCell.ConfigurationStore.IRowLayoutManager</label>
+        <link refid="interface_e_x_cell_1_1_configuration_store_1_1_i_row_layout_manager"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" line="9" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/DataStructure/Row.cs" bodystart="8" bodyend="79"/>
+    <listofallmembers>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a13d19e66320a2b8d3f59156ddb2fd391" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>Cells</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a1a104ad8b338701b4f4ecf8685d54d57" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>Config</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a2a792b4a5b93687e36e10c7b546df2f3" prot="private" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>Contains</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a8a89947c8d93becb6bc5bef9cd205c28" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>GetEnumerator</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a42839c77d08d3aef8f582556fd92cb0a" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>IndexOf</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a4b466034458f0aa348d7bc181dc61874" prot="package" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>Manager</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a2d8bbeed1536799cea700367cfff4f4c" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>ReadOnlyRow</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1a229dca90f86b7e574e9f382149d758dd" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>RowId</name></member>
+      <member refid="class_e_x_cell_1_1_data_structure_1_1_read_only_row_1aa7db2d98792eb54b3de27473d3abbe60" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ReadOnlyRow</scope><name>UpdateCellInRow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="interface_e_x_cell_1_1_data_structure_1_1_i_cell" kind="interface" prot="public">
+    <compoundname>EXCell::DataStructure::ICell</compoundname>
+    <derivedcompoundref refid="struct_e_x_cell_1_1_data_structure_1_1_cell" prot="public" virt="non-virtual">EXCell.DataStructure.Cell</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1addf9304377de3bef039e1ffb8abbf402" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>string</type>
+        <definition>string EXCell.DataStructure.ICell.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="5" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1af4b1034affc3755e1a9d342d103474b3" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>object</type>
+        <definition>object EXCell.DataStructure.ICell.Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="6" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1a109b4ba0bb7fa38275728d9fed09380f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="class_e_x_cell_1_1_data_structure_1_1_param" kindref="compound">Param</ref></type>
+        <definition>Param EXCell.DataStructure.ICell.Params</definition>
+        <argsstring></argsstring>
+        <name>Params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="7" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1ae7f5f61d56f6f91eb5a3de0e292eb1eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EXCell.DataStructure.ICell.Equals</definition>
+        <argsstring>(Cell other)</argsstring>
+        <name>Equals</name>
+        <reimplementedby refid="struct_e_x_cell_1_1_data_structure_1_1_cell_1a944bad0e9f162bfb21fdf1301d4cf363">Equals</reimplementedby>
+        <param>
+          <type><ref refid="struct_e_x_cell_1_1_data_structure_1_1_cell" kindref="compound">Cell</ref></type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="9" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1aaf9a690a5432f06094b600c4c2a04290" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EXCell.DataStructure.ICell.Equals</definition>
+        <argsstring>(object obj)</argsstring>
+        <name>Equals</name>
+        <reimplementedby refid="struct_e_x_cell_1_1_data_structure_1_1_cell_1a5f94d3c42dccd2da92cf2bb3d8e3035d">Equals</reimplementedby>
+        <param>
+          <type>object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="11" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1a4cfde2be891cb39fa66b944dc33b5633" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EXCell.DataStructure.ICell.Equals</definition>
+        <argsstring>(object x, object y)</argsstring>
+        <name>Equals</name>
+        <reimplementedby refid="struct_e_x_cell_1_1_data_structure_1_1_cell_1a3545c98ef638b9f900db7988771bd306">Equals</reimplementedby>
+        <param>
+          <type>object</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1a36021761665a8d90f71fce346cba90e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EXCell.DataStructure.ICell.GetHashCode</definition>
+        <argsstring>()</argsstring>
+        <name>GetHashCode</name>
+        <reimplementedby refid="struct_e_x_cell_1_1_data_structure_1_1_cell_1adaf4e7a95811ff32f7dae31556da5609">GetHashCode</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="15" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1acd38fbc0342d2fa1769764ec2bca5908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EXCell.DataStructure.ICell.GetHashCode</definition>
+        <argsstring>(object obj)</argsstring>
+        <name>GetHashCode</name>
+        <reimplementedby refid="struct_e_x_cell_1_1_data_structure_1_1_cell_1a8f1186a1bba558157ae98b5d68a37ad8">GetHashCode</reimplementedby>
+        <param>
+          <type>object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>EXCell.DataStructure.ICell</label>
+        <link refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell"/>
+      </node>
+      <node id="11">
+        <label>EXCell.DataStructure.Cell</label>
+        <link refid="struct_e_x_cell_1_1_data_structure_1_1_cell"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" line="4" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Interfaces/ICell.cs" bodystart="3" bodyend="18"/>
+    <listofallmembers>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1ae7f5f61d56f6f91eb5a3de0e292eb1eb" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>Equals</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1aaf9a690a5432f06094b600c4c2a04290" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>Equals</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1a4cfde2be891cb39fa66b944dc33b5633" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>Equals</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1a36021761665a8d90f71fce346cba90e2" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>GetHashCode</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1acd38fbc0342d2fa1769764ec2bca5908" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>GetHashCode</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1addf9304377de3bef039e1ffb8abbf402" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>Name</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1a109b4ba0bb7fa38275728d9fed09380f" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>Params</name></member>
+      <member refid="interface_e_x_cell_1_1_data_structure_1_1_i_cell_1af4b1034affc3755e1a9d342d103474b3" prot="public" virt="non-virtual"><scope>EXCell::DataStructure::ICell</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

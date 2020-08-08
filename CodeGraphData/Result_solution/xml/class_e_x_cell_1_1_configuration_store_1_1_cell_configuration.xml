@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration" kind="class" prot="public">
+    <compoundname>EXCell::ConfigurationStore::CellConfiguration</compoundname>
+    <basecompoundref refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration" prot="public" virt="non-virtual">EXCell.ConfigurationStore.ICellConfiguration</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1af952ddaf55a4e31b921f50688ef511ec" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>IDictionary&lt; int, <ref refid="class_e_x_cell_1_1_data_structure_1_1_param" kindref="compound">Param</ref> &gt;</type>
+        <definition>IDictionary&lt;int, Param&gt; EXCell.ConfigurationStore.CellConfiguration.RowConfiguration</definition>
+        <argsstring></argsstring>
+        <name>RowConfiguration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="10" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a4d707dd05e11cf7d3c59ef0e410b1c5e" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>bool</type>
+        <definition>bool EXCell.ConfigurationStore.CellConfiguration.IsConfigurationComplete</definition>
+        <argsstring></argsstring>
+        <name>IsConfigurationComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="14" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a32574fb4aef670e2bef9d4011e809783" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EXCell.ConfigurationStore.CellConfiguration.ColumnCount</definition>
+        <argsstring></argsstring>
+        <name>ColumnCount</name>
+        <initializer>=&gt; RowConfiguration.Keys.Count</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="12" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1ab5f7199616f3fb2831e8f9fcd15bb84c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EXCell.ConfigurationStore.CellConfiguration.CellConfiguration</definition>
+        <argsstring>()</argsstring>
+        <name>CellConfiguration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="8" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a794038bc7c985f3a60acc053f7d18222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.ConfigurationStore.CellConfiguration.ConfigurationComplete</definition>
+        <argsstring>()</argsstring>
+        <name>ConfigurationComplete</name>
+        <reimplements refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a67d1fa90c4f8b72b0988bed2e9d1d846">ConfigurationComplete</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a6797f73c2f596c9b1f4950f9a9f3ec61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXCell.ConfigurationStore.CellConfiguration.AddConfig</definition>
+        <argsstring>(IRowLayoutManager manager, Param config)</argsstring>
+        <name>AddConfig</name>
+        <reimplements refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a32b12855aa2f5872627f4abcebba1e1f">AddConfig</reimplements>
+        <param>
+          <type><ref refid="interface_e_x_cell_1_1_configuration_store_1_1_i_row_layout_manager" kindref="compound">IRowLayoutManager</ref></type>
+          <declname>manager</declname>
+        </param>
+        <param>
+          <type><ref refid="class_e_x_cell_1_1_data_structure_1_1_param" kindref="compound">Param</ref></type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="18" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="18" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a9fa3611386f864de8c4b1a29f7a00993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override bool</type>
+        <definition>override bool EXCell.ConfigurationStore.CellConfiguration.Equals</definition>
+        <argsstring>(object obj)</argsstring>
+        <name>Equals</name>
+        <reimplements refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a0e270c5e4f475b8aa2d08485a3d19074">Equals</reimplements>
+        <param>
+          <type>object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="26" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="26" bodyend="34"/>
+        <references refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a9fa3611386f864de8c4b1a29f7a00993" compoundref="_configuration_8cs" startline="26" endline="34">EXCell.ConfigurationStore.CellConfiguration.Equals</references>
+        <referencedby refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a9fa3611386f864de8c4b1a29f7a00993" compoundref="_configuration_8cs" startline="26" endline="34">EXCell.ConfigurationStore.CellConfiguration.Equals</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1af2d49b591e6de2b699279fb818d7d6e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override int</type>
+        <definition>override int EXCell.ConfigurationStore.CellConfiguration.GetHashCode</definition>
+        <argsstring>()</argsstring>
+        <name>GetHashCode</name>
+        <reimplements refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a36e50d347018f589fedc5c58e4e7d4d9">GetHashCode</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="36" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="36" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a633683781875279cbb52fd1389551b4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EXCell.ConfigurationStore.CellConfiguration.Param</definition>
+        <argsstring>()</argsstring>
+        <name>Param</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="8" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>EXCell.ConfigurationStore.CellConfiguration</label>
+        <link refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ICellConfiguration</label>
+        <link refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>EXCell.ConfigurationStore.CellConfiguration</label>
+        <link refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ICellConfiguration</label>
+        <link refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" line="7" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/Configuration.cs" bodystart="6" bodyend="46"/>
+    <listofallmembers>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a6797f73c2f596c9b1f4950f9a9f3ec61" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>AddConfig</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1ab5f7199616f3fb2831e8f9fcd15bb84c" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>CellConfiguration</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a32574fb4aef670e2bef9d4011e809783" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>ColumnCount</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1aa42ad2363bfc6f66a20c57a2b51c62ac" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>ColumnIds</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1abb77f2c12bb66fef7fea28ce59acad61" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>Columns</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a794038bc7c985f3a60acc053f7d18222" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>ConfigurationComplete</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1aa82fc226a11f0cd3c0eb1521c4a680bb" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>ContainsColumn</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a153eba70911bda2686a3a02445b87b56" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>ContainsConfig</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a7cbb42d6ac8c47236b8196ad7e7fb3e5" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>ContainsRow</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a9fa3611386f864de8c4b1a29f7a00993" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>Equals</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1af2d49b591e6de2b699279fb818d7d6e2" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>GetHashCode</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a4d707dd05e11cf7d3c59ef0e410b1c5e" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>IsConfigurationComplete</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1a633683781875279cbb52fd1389551b4b" prot="private" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>Param</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_cell_configuration_1af952ddaf55a4e31b921f50688ef511ec" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>RowConfiguration</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a7351e99f4135299679b406d2823e4eff" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>this[int r]</name></member>
+      <member refid="interface_e_x_cell_1_1_configuration_store_1_1_i_cell_configuration_1a5d1b51667d2ffeb4a77fa3f880cbe809" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::CellConfiguration</scope><name>TryGetConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

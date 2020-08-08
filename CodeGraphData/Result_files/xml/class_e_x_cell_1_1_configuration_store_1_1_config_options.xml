@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_e_x_cell_1_1_configuration_store_1_1_config_options" kind="class" prot="public">
+    <compoundname>EXCell::ConfigurationStore::ConfigOptions</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a994b5e1c05c19b5401648ab349137b44" prot="public" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string EXCell.ConfigurationStore.ConfigOptions.Config</definition>
+        <argsstring></argsstring>
+        <name>Config</name>
+        <initializer>= &quot;ClientConfig&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" line="11" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_e_x_cell_1_1_configuration_store_1_1_config_options_1ac5e299441a27766767150f25367f76ce" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string EXCell.ConfigurationStore.ConfigOptions.informationProviderGLN</definition>
+        <argsstring></argsstring>
+        <name>informationProviderGLN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" line="12" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a2612e4a134dfcbc029ca6c0769c58a41" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string EXCell.ConfigurationStore.ConfigOptions.informationProviderName</definition>
+        <argsstring></argsstring>
+        <name>informationProviderName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" line="13" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a4fcba21dc88388ef7769b24b0b13531e" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string EXCell.ConfigurationStore.ConfigOptions.manufacturerGLN</definition>
+        <argsstring></argsstring>
+        <name>manufacturerGLN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" line="14" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a4dda8b073dc6c30da8ba16b1f0907539" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>string</type>
+        <definition>string EXCell.ConfigurationStore.ConfigOptions.manufacturerName</definition>
+        <argsstring></argsstring>
+        <name>manufacturerName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" line="15" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" line="10" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Configuration/ConfigurationLoader/Injector.cs" bodystart="9" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a994b5e1c05c19b5401648ab349137b44" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::ConfigOptions</scope><name>Config</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_config_options_1ac5e299441a27766767150f25367f76ce" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::ConfigOptions</scope><name>informationProviderGLN</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a2612e4a134dfcbc029ca6c0769c58a41" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::ConfigOptions</scope><name>informationProviderName</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a4fcba21dc88388ef7769b24b0b13531e" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::ConfigOptions</scope><name>manufacturerGLN</name></member>
+      <member refid="class_e_x_cell_1_1_configuration_store_1_1_config_options_1a4dda8b073dc6c30da8ba16b1f0907539" prot="public" virt="non-virtual"><scope>EXCell::ConfigurationStore::ConfigOptions</scope><name>manufacturerName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

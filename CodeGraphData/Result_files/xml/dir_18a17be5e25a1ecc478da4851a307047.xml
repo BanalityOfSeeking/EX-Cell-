@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_18a17be5e25a1ecc478da4851a307047" kind="dir">
+    <compoundname>C:/Users/rapril/source/repos/SSDMGMT.GDSN</compoundname>
+    <innerdir refid="dir_4cd17a89366365032cb4a43d9b16b972">C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell</innerdir>
+    <innerfile refid="_program_8cs">Program.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/"/>
+  </compounddef>
+</doxygen>

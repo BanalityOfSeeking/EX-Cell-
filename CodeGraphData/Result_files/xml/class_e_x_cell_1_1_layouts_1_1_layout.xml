@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_e_x_cell_1_1_layouts_1_1_layout" kind="class" prot="public">
+    <compoundname>EXCell::Layouts::Layout</compoundname>
+    <basecompoundref refid="interface_e_x_cell_1_1_layouts_1_1_i_layout" prot="public" virt="non-virtual">EXCell.Layouts.ILayout</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a7289df54122c41e640e693585b3d2af2" prot="private" static="no" mutable="no">
+        <type>readonly IConfiguration</type>
+        <definition>readonly IConfiguration EXCell.Layouts.Layout.Configuration</definition>
+        <argsstring></argsstring>
+        <name>Configuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="26" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a6240c824e44f787b94fc4c3c2e8c399f" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.productTypes</definition>
+        <argsstring></argsstring>
+        <name>productTypes</name>
+        <initializer>= new List&lt;string&gt; 
+        { 
+            &quot;CA -- CASE&quot;,
+            &quot;DS -- Display&quot;,
+            &quot;EA -- Each&quot;,
+            &quot;MX -- Mod Pallet(Mixed)&quot;,
+            &quot;PK -- Package&quot;,
+            &quot;PL -- Pallet&quot;,
+            &quot;TL -- TRANSPORT_LOAD&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="28" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a526d24b66957a2eed461f680671c4364" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.dataCarrierTypeCodes</definition>
+        <argsstring></argsstring>
+        <name>dataCarrierTypeCodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="39" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a8d5f624d0703aeeb6c54548d0bfbb58d" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.countryCodes</definition>
+        <argsstring></argsstring>
+        <name>countryCodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="78" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a5fe57dd77e24df7c6a7de533f0a00159" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.typeOfInformations</definition>
+        <argsstring></argsstring>
+        <name>typeOfInformations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="333" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a19579f91f9bbda557f24733069179535" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.identificationKeyCodes</definition>
+        <argsstring></argsstring>
+        <name>identificationKeyCodes</name>
+        <initializer>= new List&lt;string&gt;
+        {
+            &quot;GTIN_8 -- GTIN_8&quot;,
+            &quot;GTIN_12 -- GTIN_12&quot;,
+            &quot;GTIN_13 -- GTIN_13&quot;,
+            &quot;GTIN_14 -- GTIN_14&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="389" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="389" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a4adba7be92aa43d16e9d720fe185fa12" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.MassUOM</definition>
+        <argsstring></argsstring>
+        <name>MassUOM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="397" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="397" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a52a6643826723a74acf48c99d2ed706d" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.AreaCountDimensionInfostorageMassVolumeUOM</definition>
+        <argsstring></argsstring>
+        <name>AreaCountDimensionInfostorageMassVolumeUOM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="441" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="441" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a5f50abb775054494dfa491d1af5b91e6" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.DimensionsUOM</definition>
+        <argsstring></argsstring>
+        <name>DimensionsUOM</name>
+        <initializer>= new List&lt;string&gt;
+        {
+            &quot;4H -- Micrometre&quot;,
+            &quot;A11 -- Angstrom&quot;,
+            &quot;X_HIN -- Hundredths of an Inch&quot;,
+            &quot;X_SIN -- Thirty Seconds of an Inch&quot;,
+            &quot;X_UIN -- Ten Thousandths of an Inch&quot;,
+            &quot;CMT -- Centimetre&quot;,
+            &quot;KMT -- Kilometre&quot;,
+            &quot;DMT -- Decimetre&quot;,
+            &quot;FOT -- Foot&quot;,
+            &quot;H79 -- French gauge&quot;,
+            &quot;INH -- Inches&quot;,
+            &quot;LF -- Linear foot&quot;,
+            &quot;LM -- Linear metre&quot;,
+            &quot;MMT -- Millimetre&quot;,
+            &quot;MTR -- Metre&quot;,
+            &quot;SMI -- Mile (statute mile)&quot;,
+            &quot;YRD -- Yard&quot;,
+            &quot;AWG -- Gauge&quot;,
+            &quot;C45 -- Nanometre&quot;,
+            &quot;C52 -- Picometre&quot;,
+            &quot;CFU -- Colony Forming Units&quot;,
+            &quot;A71 -- Femtometre&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="649" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="649" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a9c5dcc67fe2894cf567999d1efe32f94" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.VolumeUOM</definition>
+        <argsstring></argsstring>
+        <name>VolumeUOM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="675" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1a84bfecf5b7c3f3e2e35665e44244a0bc" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.TemperatureUOM</definition>
+        <argsstring></argsstring>
+        <name>TemperatureUOM</name>
+        <initializer>= new List&lt;string&gt;
+        {
+            &quot;CEL -- Degree Celsius&quot;,
+            &quot;FAH -- Degree Fahrenheit&quot;,
+            &quot;KEL -- Kelvin&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="720" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="720" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_x_cell_1_1_layouts_1_1_layout_1ac4d7288e2a7d66765e8116a9760f983b" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; string &gt;</type>
+        <definition>readonly List&lt;string&gt; EXCell.Layouts.Layout.booleanVV</definition>
+        <argsstring></argsstring>
+        <name>booleanVV</name>
+        <initializer>= new List&lt;string&gt; { &quot;true -- TRUE&quot;, &quot;false -- FALSE&quot; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="727" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="727" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_e_x_cell_1_1_layouts_1_1_layout_1a50f8636df016ff7db827eb675646aed9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_e_x_cell_1_1_data_structure_1_1_param_builder" kindref="compound">ParamBuilder</ref></type>
+        <definition>ParamBuilder EXCell.Layouts.Layout.Params</definition>
+        <argsstring>(IRowLayoutManager manager, ICellConfiguration configuration)</argsstring>
+        <name>Params</name>
+        <reimplements refid="interface_e_x_cell_1_1_layouts_1_1_i_layout_1a7b1f8e3873be7fb7bdaa89c76191d74c">Params</reimplements>
+        <param>
+          <type>IRowLayoutManager</type>
+          <declname>manager</declname>
+        </param>
+        <param>
+          <type>ICellConfiguration</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="729" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="729" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_x_cell_1_1_layouts_1_1_layout_1a47c27bcd12018165d97b5451531a3588" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EXCell.Layouts.Layout.Layout</definition>
+        <argsstring>(IConfigurationBuilder configurationBuilder)</argsstring>
+        <name>Layout</name>
+        <param>
+          <type>IConfigurationBuilder</type>
+          <declname>configurationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="823" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="823" bodyend="828"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>EXCell.Layouts.Layout</label>
+        <link refid="class_e_x_cell_1_1_layouts_1_1_layout"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ILayout</label>
+        <link refid="interface_e_x_cell_1_1_layouts_1_1_i_layout"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>EXCell.Layouts.Layout</label>
+        <link refid="class_e_x_cell_1_1_layouts_1_1_layout"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ILayout</label>
+        <link refid="interface_e_x_cell_1_1_layouts_1_1_i_layout"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" line="25" column="1" bodyfile="C:/Users/rapril/source/repos/SSDMGMT.GDSN/EXCell/Layouts/Layout.cs" bodystart="24" bodyend="829"/>
+    <listofallmembers>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a52a6643826723a74acf48c99d2ed706d" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>AreaCountDimensionInfostorageMassVolumeUOM</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1ac4d7288e2a7d66765e8116a9760f983b" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>booleanVV</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a7289df54122c41e640e693585b3d2af2" prot="private" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>Configuration</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a8d5f624d0703aeeb6c54548d0bfbb58d" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>countryCodes</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a526d24b66957a2eed461f680671c4364" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>dataCarrierTypeCodes</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a5f50abb775054494dfa491d1af5b91e6" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>DimensionsUOM</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a19579f91f9bbda557f24733069179535" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>identificationKeyCodes</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a47c27bcd12018165d97b5451531a3588" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>Layout</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a4adba7be92aa43d16e9d720fe185fa12" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>MassUOM</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a50f8636df016ff7db827eb675646aed9" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>Params</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a6240c824e44f787b94fc4c3c2e8c399f" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>productTypes</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a84bfecf5b7c3f3e2e35665e44244a0bc" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>TemperatureUOM</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a5fe57dd77e24df7c6a7de533f0a00159" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>typeOfInformations</name></member>
+      <member refid="class_e_x_cell_1_1_layouts_1_1_layout_1a9c5dcc67fe2894cf567999d1efe32f94" prot="public" virt="non-virtual"><scope>EXCell::Layouts::Layout</scope><name>VolumeUOM</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

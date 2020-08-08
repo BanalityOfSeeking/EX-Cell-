@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_e_x_cell_u_i_1_1_program" kind="class" prot="public">
+    <compoundname>EXCellUI::Program</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_e_x_cell_u_i_1_1_program_1a1e001ededd400408e7a462adcdbcc3fe" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task</type>
+        <definition>static async Task EXCellUI.Program.Main</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>Main</name>
+        <param>
+          <type>string[]</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/rapril/source/repos/EXCellUI/Program.cs" line="15" column="1" bodyfile="C:/Users/rapril/source/repos/EXCellUI/Program.cs" bodystart="15" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/EXCellUI/Program.cs" line="14" column="1" bodyfile="C:/Users/rapril/source/repos/EXCellUI/Program.cs" bodystart="13" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_e_x_cell_u_i_1_1_program_1a1e001ededd400408e7a462adcdbcc3fe" prot="public" virt="non-virtual"><scope>EXCellUI::Program</scope><name>Main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

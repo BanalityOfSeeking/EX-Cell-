@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_dbe3f063c701777e9783d8c5c6ea343f" kind="dir">
+    <compoundname>C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject</compoundname>
+    <innerfile refid="_i_loader_8cs">ILoader.cs</innerfile>
+    <innerfile refid="_loader_8cs">Loader.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/rapril/source/repos/SSDMGMT.GDSN/Loader/LoaderObject/"/>
+  </compounddef>
+</doxygen>
