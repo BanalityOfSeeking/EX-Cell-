@@ -14,29 +14,27 @@ using System.Xml.Serialization;
 namespace EXCell.DataStructure
 {
     [Serializable]
-    public class Sheet : MarshalByValueComponent, IListSource, ISupportInitializeNotification, ISerializable, IXmlSerializable, ISheet
+    public class Sheet : MarshalByValueComponent, ISheet
     {
         public DataTable SheetTable { get; }
+        public IRowLayoutManager Manager { get; }
 
-        internal Sheet(SerializationInfo info, StreamingContext context)
+        public bool ContainsListCollection => ((IListSource)SheetTable).ContainsListCollection;
+
+        public bool IsInitialized => SheetTable.IsInitialized;
+
+        internal ReadOnlyRow[] RowArray = new ReadOnlyRow[1000];
+
+        protected Sheet(SerializationInfo info, StreamingContext context)
         {
             SheetTable = info.GetValue("SheetTable", typeof(DataTable)) as DataTable;
             Manager = info.GetValue("Manager", typeof(RowLayoutManager)) as RowLayoutManager;
             RowArray = info.GetValue("RowArray", typeof(ReadOnlyRow)) as ReadOnlyRow[];
         }
-        internal Sheet(IRowLayoutManager manager)
+        public Sheet(IRowLayoutManager manager, DataTable sheetTable)
         {
             Manager = manager;
-            SheetTable = new DataTable("Sheet");
-        }
-
-        public Sheet(IRowLayoutManager manager, ILayout layout)
-        {
-            
-            Manager = manager;            
-            SheetTable = new DataTable("Sheet");
-            LoadParams(layout.LayoutParams(manager));
-            CreateFirstRow();
+            SheetTable = sheetTable;
         }
 
         public event EventHandler Initialized
@@ -52,48 +50,26 @@ namespace EXCell.DataStructure
             }
         }
 
-        public bool ContainsListCollection => ((IListSource)SheetTable).ContainsListCollection;
-
-        public bool IsInitialized => ((ISupportInitializeNotification)SheetTable).IsInitialized;
-
-        internal IRowLayoutManager Manager;
-        public ReadOnlyRow[] RowArray = new ReadOnlyRow[1000];
+        public Sheet CreateFirstRow(ParamBuilder builder)
+        {
+            LoadRow(builder.Params);
+            Manager.Configs.ConfigurationComplete();
+            RowArray[0] = new ReadOnlyRow(Manager); 
+            SheetTable.Rows.Add(SheetTable.NewRow());
+            return this;
+        }
 
         public Sheet CreateFirstRow()
         {
-            if (!Manager.Configs.IsConfigurationComplete)
-            {
-                var Configuration = Manager.Configs;
-                Configuration.ConfigurationComplete();
+            if (Manager.Configs.IsConfigurationComplete)
+            {               
                 RowArray[0] = new ReadOnlyRow(Manager);
                 SheetTable.Rows.Add(SheetTable.NewRow());
-
-                ///
-                /// Test getting and setting value in Cell
-                /// basic impl.
-                /// 
-#if _TEST_
-                for (int i = 0; i < RowArray[0].Cells.Count; i++)
-                {
-                    if (RowArray[0].Cells[i].Name == "Gtin")
-                    {
-                        RowArray[0].Cells[i].Value = "00012347825784";
-                    }
-                }
-                var Gtin = RowArray[0].Cells.FirstOrDefault(x => x.Name == "Gtin")?.Value;
-
-                ///
-                /// Test getting and setting values in DataRow
-                ///
-
-                SheetTable.Rows[0].SetField<string>("Gtin", "00012347825784");
-                Gtin = SheetTable.Rows[0].Field<string>("Gtin");
-#endif
             }
             return this;
         }
 
-        public Sheet LoadParams(IEnumerable<IParam> items)
+        public Sheet LoadRow(IEnumerable<IParam> items)
         {
             if (items is null)
             {
@@ -105,14 +81,7 @@ namespace EXCell.DataStructure
             {
                 Manager.AddConfig(Item);
 
-                DataColumn dc = new DataColumn(Item.Name, Item.T switch
-                {
-                    'T' => typeof(string),
-                    'L' => typeof(List<string>),
-                    'D' => typeof(DateTime),
-                    'I' => typeof(int),
-                    _ => typeof(string)
-                })
+                DataColumn dc = new DataColumn(Item.Name, typeof(string))
                 {
                     Caption = Item.Name,
                     ColumnName = Item.Name,

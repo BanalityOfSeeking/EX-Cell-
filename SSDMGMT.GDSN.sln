@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSDMGMT.GDSN", "SSDMGMT.GDSN.csproj", "{35E7E12D-2D8D-4B77-A994-F09523ECF6E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXCellUI", "..\EXCellUI\EXCellUI.csproj", "{D3DF96B6-7D9B-4242-944B-459D7535E92E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXCellGUI", "..\EXCellGUI\EXCellGUI.csproj", "{CE1D5C0E-3B95-4258-BD5F-8950BAFBF58C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{35E7E12D-2D8D-4B77-A994-F09523ECF6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35E7E12D-2D8D-4B77-A994-F09523ECF6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35E7E12D-2D8D-4B77-A994-F09523ECF6E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3DF96B6-7D9B-4242-944B-459D7535E92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3DF96B6-7D9B-4242-944B-459D7535E92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3DF96B6-7D9B-4242-944B-459D7535E92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3DF96B6-7D9B-4242-944B-459D7535E92E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1D5C0E-3B95-4258-BD5F-8950BAFBF58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1D5C0E-3B95-4258-BD5F-8950BAFBF58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1D5C0E-3B95-4258-BD5F-8950BAFBF58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1D5C0E-3B95-4258-BD5F-8950BAFBF58C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -23,8 +23,6 @@ namespace EXCell.Layouts
 {
     public class Layout : ILayout
     {
-        private readonly IConfiguration Configuration;
-
         public readonly IReadOnlyCollection<string> productTypes = new List<string> 
         { 
             "CA -- CASE",
@@ -35,6 +33,7 @@ namespace EXCell.Layouts
             "PL -- Pallet",
             "TL -- TRANSPORT_LOAD"
         };
+
 
         public readonly IReadOnlyCollection<string> dataCarrierTypeCodes = new List<string>
         {
@@ -819,9 +818,10 @@ namespace EXCell.Layouts
                 .AddParam("TradeItemTemperatureInformation_minimumTemperature", string.Empty, 4, 0)
                 .AddParam("TradeItemTemperatureInformation_minimumTemperatureUOM", "FAH -- Degree Fahrenheit").Params;
         }
-
+        private IConfiguration Configuration { get; }
         public Layout(IConfiguration configuration)
         {
+            Configuration = configuration;
         }
     }
 }

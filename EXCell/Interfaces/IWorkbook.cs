@@ -16,7 +16,7 @@ namespace EXCell.DataStructure
 {
     public interface IWorkbook
     {
-        void AddSheet();
+        Workbook AddSheet();
         bool Equals(object obj);
         int GetHashCode();
         string ToString();

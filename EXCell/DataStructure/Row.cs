@@ -15,9 +15,9 @@ namespace EXCell.DataStructure
             Manager = manager;
             RowId = ((RowLayoutManager)Manager).RequestRowId;
             var CellList = new List<ICell>();
-            foreach (Param param in manager.Configs.Columns)
+            foreach (IParam iparam in manager.Configs.Columns)
             {
-                CellList.Add(new Cell(param));
+                CellList.Add(new Cell(iparam));
             }
             Cells = new ReadOnlyCollection<ICell>(CellList);
         }
@@ -75,21 +75,6 @@ namespace EXCell.DataStructure
                 }
             }
             return -1;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
         }
     }
 }

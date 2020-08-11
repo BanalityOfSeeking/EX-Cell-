@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
+
 using EXCell.ConfigurationStore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -25,8 +26,10 @@ namespace EXCell.DataStructure
     {
         public readonly IConfiguration Configuration;
         internal DataSet Data;
-        public ISheet[] Sheets;
+        internal ISheet[] Sheets = new Sheet[5];
         private int SheetsIndex = 0;
+        private const int MaxSheets = 5;
+        public ISheet CurrentSheet => Sheets[SheetsIndex -1];
         /// <summary>
         /// Constructor for Workbook
         /// Loads Configuration file
@@ -37,49 +40,25 @@ namespace EXCell.DataStructure
         public Workbook(IConfigurationBuilder configurationBuilder)
         {
             Configuration = configurationBuilder.AddXmlFile("Settings.xml").Build();
-            Sheets = new Sheet[5];
             Data = new DataSet("Workbook");
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is Workbook workbook &&
-                   EqualityComparer<IConfiguration>.Default.Equals(Configuration, workbook.Configuration) &&
-                   EqualityComparer<DataSet>.Default.Equals(Data, workbook.Data) &&
-                   EqualityComparer<ISheet[]>.Default.Equals(Sheets, workbook.Sheets);
         }
         /// <summary>
         /// AddSheet checks sheets
         /// </summary>
-        public void AddSheet()
+        public Workbook AddSheet()
         {
+            Sheet sheet = default;
             if (SheetsIndex < 5)
             {
                 var cc = new CellConfiguration();
                 var rlm = new RowLayoutManager(cc);
-                Sheet sheet = new Sheet(rlm);
+                var dt = new DataTable("Sheet" + SheetsIndex.ToString());
+                sheet = new Sheet(rlm, dt);
+                Data.Tables.Add(dt);
                 Sheets[SheetsIndex] = sheet;
                 SheetsIndex += 1;
             }
-        }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Configuration, Data, Sheets);
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
-        public static bool operator ==(Workbook left, Workbook right)
-        {
-            return EqualityComparer<Workbook>.Default.Equals(left, right);
-        }
-
-        public static bool operator !=(Workbook left, Workbook right)
-        {
-            return !(left == right);
+            return this;
         }
     }
 }

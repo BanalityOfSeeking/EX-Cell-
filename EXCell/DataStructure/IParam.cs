@@ -5,7 +5,7 @@
         int MaxLen { get; }
         int MinLen { get; }
         string Name { get; }
-        char T { get; }
+        object Options { get; }
         string Value { get; }
     }
 }

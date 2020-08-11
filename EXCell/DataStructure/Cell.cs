@@ -1,94 +1,8 @@
-﻿using EXCell.ConfigurationStore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace EXCell.DataStructure
 {
-    public struct ParamBuilder
-    {
-        public IRowLayoutManager Manager { get; }
-
-        public IEnumerable<IParam> Params => Manager.Configs.Columns; 
-        public ParamBuilder(IRowLayoutManager manager)
-        {
-            Manager = manager;
-        }
-
-        public ParamBuilder AddParam(string name, string text, int min, int max)
-        {
-            Manager.AddConfig(new Param(name, text, min, max));
-            return this;
-        }
-
-        public ParamBuilder AddParam(string name, string constant)
-        {
-            Manager.AddConfig(new Param(name, constant, -1, -1));
-            return this;
-        }
-
-        public ParamBuilder AddParam(string name, IEnumerable<string> list)
-        {
-            Manager.AddConfig(new Param(name, list));
-            return this;
-        }
-
-        public ParamBuilder AddParam(string name, int integer)
-        {
-            Manager.AddConfig(new Param(name, integer));
-            return this;
-        }
-
-        public ParamBuilder AddParam(string name, DateTime date)
-        {
-            Manager.AddConfig(new Param(name, date));
-            return this;
-        }
-    }
-
-    public class Param : IParam
-    {
-        public string Name { get; }
-        public char T { get; }
-        public object Options = null;
-        public Param(string name, string text, int min, int max)
-        {
-            T = 'T';
-            MinLen = min;
-            MaxLen = max;
-            Value = text;
-            Name = name;
-        }
-
-        public Param(string name, string constant) : this(name, constant, -1, -1)
-        {
-        }
-
-        public Param(string name, IEnumerable<string> list) : this(name, "", -1, -1)
-        {
-            T = 'L';
-            Options = list;
-            Name = name;
-        }
-
-        public Param(string name, int integer)
-        {
-            T = 'I';
-            Value = integer.ToString();
-            Name = name;
-        }
-
-        public Param(string name, DateTime date)
-        {
-            T = 'D';
-            Value = date.ToString("yyyy-MM-dd'T'HH:mm:ss");
-            Name = name;
-        }
-
-        public string Value { get; }
-        public int MaxLen { get; internal set; }
-        public int MinLen { get; internal set; }
-    }
-
     /// <summary>
     /// Cell stores a dynamic value.
     /// TEXT, LIST, 
@@ -96,17 +10,15 @@ namespace EXCell.DataStructure
     public struct Cell : ICell
     {
         public object Options { get; }
-
+        internal Cell(IParam cellParams)
+        {
+            Value = cellParams.Value;
+            Name = cellParams.Name;
+            Options = cellParams.Options;
+        }
         public Cell(Param cellParams)
         {
-            Value = cellParams.T switch
-            {
-                'T' => cellParams.Value,
-                'L' => cellParams.Value,
-                'D' => cellParams.Value,
-                'I' => cellParams.Value,
-                _ => string.Empty
-            };
+            Value = string.Empty;
             Name = cellParams.Name;
             Options = cellParams.Options;
         }
