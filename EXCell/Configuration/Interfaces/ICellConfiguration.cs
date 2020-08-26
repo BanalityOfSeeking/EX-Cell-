@@ -7,8 +7,8 @@ namespace EXCell.ConfigurationStore
     public interface ICellConfiguration
     {        
         int ColumnCount { get; }
-        ICollection<int> ColumnIds => RowConfiguration.Keys;
-        ICollection<IParam> Columns => RowConfiguration.Values;
+        IEnumerable<int> ColumnIds => RowConfiguration.Keys;
+        IEnumerable<IParam> Columns => RowConfiguration.Values;
         bool IsConfigurationComplete { get; }
         IDictionary<int, IParam> RowConfiguration { get; }
 

@@ -10,9 +10,9 @@ using System.Linq;
 
 namespace EXCell.Layouts
 {
-    public class Layout : ILayout
+    public static class Layout
     {
-        public readonly IReadOnlyCollection<string> productTypes = new List<string> 
+        public static readonly IReadOnlyCollection<string> productTypes = new List<string> 
         { 
             "CA -- CASE",
             "DS -- Display",
@@ -24,7 +24,7 @@ namespace EXCell.Layouts
         };
 
 
-        public readonly IReadOnlyCollection<string> dataCarrierTypeCodes = new List<string>
+        public static readonly IReadOnlyCollection<string> dataCarrierTypeCodes = new List<string>
         {
             "EAN_13 -- EAN 13",
             "EAN_13_COMPOSITE -- EAN 13 COMPOSITE",
@@ -63,7 +63,7 @@ namespace EXCell.Layouts
             "EPC_ENABLED_RFID_TAG -- EPC Enabled RFID Tag"
         };
 
-        public readonly IReadOnlyCollection<string> countryCodes = new List<string>
+        public static readonly IReadOnlyCollection<string> countryCodes = new List<string>
         {
             "AF -- AFGHANISTAN",
             "AX -- ALAND ISLANDS",
@@ -318,7 +318,7 @@ namespace EXCell.Layouts
             "SS -- SOUTH SUDAN"
         };
 
-        public readonly IReadOnlyCollection<string> typeOfInformations = new List<string>
+        public static readonly IReadOnlyCollection<string> typeOfInformations = new List<string>
         {
             "AUDIO -- Audio",
             "CERTIFICATION -- Certification",
@@ -374,7 +374,7 @@ namespace EXCell.Layouts
             "DISPOSAL_INSTRUCTIONS -- Instructions for disposal"
         };
 
-        public readonly IReadOnlyCollection<string> identificationKeyCodes = new List<string>
+        public static readonly IReadOnlyCollection<string> identificationKeyCodes = new List<string>
         {
             "GTIN_8 -- GTIN_8",
             "GTIN_12 -- GTIN_12",
@@ -382,7 +382,7 @@ namespace EXCell.Layouts
             "GTIN_14 -- GTIN_14"
         };
 
-        public readonly IReadOnlyCollection<string> MassUOM = new List<string>
+        public static readonly IReadOnlyCollection<string> MassUOM = new List<string>
         {
             "KGM -- Kilogram",
             "A43 -- Deadweight Tonnage",
@@ -426,7 +426,7 @@ namespace EXCell.Layouts
             "GL -- Gram Per Litre"
         };
 
-        public readonly IReadOnlyCollection<string> AreaCountDimensionInfostorageMassVolumeUOM = new List<string>
+        public static readonly IReadOnlyCollection<string> AreaCountDimensionInfostorageMassVolumeUOM = new List<string>
         {
             "DMK -- Square decimetre",
             "A11 -- Angstrom",
@@ -634,7 +634,7 @@ namespace EXCell.Layouts
             "E36 -- Petabyte"
         };
 
-        public readonly IReadOnlyCollection<string> DimensionsUOM = new List<string>
+        public static readonly IReadOnlyCollection<string> DimensionsUOM = new List<string>
         {
             "4H -- Micrometre",
             "A11 -- Angstrom",
@@ -660,7 +660,7 @@ namespace EXCell.Layouts
             "A71 -- Femtometre"
         };
 
-        public readonly IReadOnlyCollection<string> VolumeUOM = new List<string>
+        public static readonly IReadOnlyCollection<string> VolumeUOM = new List<string>
         {
             "DMQ -- Cubic decimetre",
             "CMQ -- Cubic centimetre",
@@ -705,112 +705,102 @@ namespace EXCell.Layouts
             "NIU -- Number of International Unit"
         };
 
-        public readonly IReadOnlyCollection<string> TemperatureUOM = new List<string>
+        public static readonly IReadOnlyCollection<string> TemperatureUOM = new List<string>
         {
             "CEL -- Degree Celsius",
             "FAH -- Degree Fahrenheit",
             "KEL -- Kelvin"
         };
+        
+        public static readonly IReadOnlyCollection<string> booleanVV = new List<string> { "true -- TRUE", "false -- FALSE" };
 
-        public readonly IReadOnlyCollection<string> booleanVV = new List<string> { "true -- TRUE", "false -- FALSE" };
+        public static readonly IReadOnlyCollection<string> RecordType = new List<string> { "ITEM -- ITEM", "MORE -- MORE" };
+        public static readonly IReadOnlyCollection<string> Operation = new List<string> { "ADD -- ADD", "APPEND -- APPEND", "MODIFY -- MODIFY" };
+        public static readonly IReadOnlyCollection<string> ImportItem = new List<string> { "Y -- YES", "N -- NO" };
 
-        public IEnumerable<IParam> LayoutParams(IRowLayoutManager manager)
-        {
-            var configOptions = new ConfigOptions();
-            Configuration.GetSection(ConfigOptions.Config).Bind(configOptions);
-            return new ParamBuilder(manager)
-                .AddParam("RecordType", new List<string> { "ITEM -- ITEM", "MORE -- MORE" })
-                .AddParam("Operation", new List<string> { "ADD -- ADD", "APPEND -- APPEND", "MODIFY -- MODIFY" })
-                .AddParam("ImportItem", new List<string> { "Y -- YES", "N -- NO" })
-                .AddParam("InformationProviderGLN", configOptions.informationProviderGLN)
-                .AddParam("InformationProviderName", configOptions.informationProviderName)
-                .AddParam("TypeOfItem", new List<string> { "GDSN", "NON-GDSN" })
-                .AddParam("Gtin", string.Empty, 14, 14)
-                .AddParam("GtinName", string.Empty, 50, 0)
-                .AddParam("GtinNameLANG", "en -- English")
+        public static readonly IReadOnlyCollection<string> TypeOfItem = new List<string> { "GDSN", "NON-GDSN" };
+        /*
                 .AddParam("ProductType", productTypes)
-                .AddParam("BrandName", string.Empty, 50, 0)
+                .AddParam("BrandName", string.Empty, 0, 50)
+                .AddParam("BrandNameLang", "en -- English", 0, 20)
                 .AddParam("BrandOwnerGLN", string.Empty, 13, 13)
-                .AddParam("BrandOwnerName", "en -- English")
+
                 .AddParam("AlternateItemIdentification_groupController", "GroupBreak")
                 .AddParam("AlternateItemIdentification_agency", "90")
-                .AddParam("AlternateItemIdentification_id", string.Empty, 50, 0)
-                .AddParam("CountryOfOrigin_groupController", "GroupBreak")
+                .AddParam("AlternateItemIdentification_id", string.Empty, 0, 50)
+                .AddParam("CountryOfOrigin_groupController", "GroupBreak", 0, 20)
                 .AddParam("CountryOfOrigin_countryCode", countryCodes)
-                .AddParam("DataCarrier_groupController", "GroupBreak")
+                .AddParam("DataCarrier_groupController", "GroupBreak", 0, 20)
                 .AddParam("DataCarrier_dataCarrierTypeCode", dataCarrierTypeCodes)
-                .AddParam("ExternalFileLink_groupController", "GroupBreak")
-                .AddParam("ExternalFileLink_externalFileLinkFileName", string.Empty, 100, 0)
-                .AddParam("ExternalFileLink_fileFormatName", string.Empty, 5, 0)
+                .AddParam("ExternalFileLink_groupController", "GroupBreak", 0, 20)
+                .AddParam("ExternalFileLink_externalFileLinkFileName", string.Empty, 0, 255)
+                .AddParam("ExternalFileLink_fileFormatName", string.Empty, 0, 5)
                 .AddParam("ExternalFileLink_typeOfInformation", typeOfInformations)
-                .AddParam("ExternalFileLink_uniformResourceIdentifier", string.Empty, 255, 0)
-                .AddParam("GlobalClassificationCategory_code", string.Empty, 10, 0)
-                .AddParam("Gs1TradeItemIdentificationKey_groupController", "GroupBreak")
+                .AddParam("ExternalFileLink_uniformResourceIdentifier", string.Empty, 0, 255)
+                .AddParam("GlobalClassificationCategory_code", string.Empty, 0, 10)
+                .AddParam("Gs1TradeItemIdentificationKey_groupController", "GroupBreak", 0, 20)
                 .AddParam("Gs1TradeItemIdentificationKey_code", identificationKeyCodes)
-                .AddParam("Gs1TradeItemIdentificationKey_value", string.Empty, 14, 8)
-                .AddParam("Manufacturer_groupController", "GroupBreak")
-                .AddParam("Manufacturer_gln", configOptions.manufacturerGLN)
-                .AddParam("Manufacturer_name", configOptions.manufacturerName)
-                .AddParam("MarketingMessage_groupController", "GroupBreak")
-                .AddParam("MarketingMessage_tradeItemMarketingMessage", string.Empty, 255, 0)
-                .AddParam("MarketingMessage_tradeItemMarketingMessageLANG", "en -- English")
-                .AddParam("Depth", string.Empty, 5, 0)
+                .AddParam("Gs1TradeItemIdentificationKey_value", string.Empty, 8, 14)
+                .AddParam("Manufacturer_groupController", "GroupBreak", 0, 20)
+                .AddParam("Manufacturer_gln", string.Empty, 13, 13)
+                .AddParam("Manufacturer_name", string.Empty, 0, 50)
+                .AddParam("MarketingMessage_groupController", "GroupBreak", 0, 20)
+                .AddParam("MarketingMessage_tradeItemMarketingMessage", string.Empty, 0, 255)
+                .AddParam("MarketingMessage_tradeItemMarketingMessageLANG", "en -- English", 0, 20)
+                .AddParam("Depth", string.Empty, 0, 5)
                 .AddParam("DepthUOM", DimensionsUOM)
                 .AddParam("EffectiveDate", DateTime.Now)
-                .AddParam("FunctionalName", string.Empty, 35, 0)
-                .AddParam("FunctionalNameLANG", "en -- English")
-                .AddParam("GrossWeight", string.Empty, 10, 0)
+                .AddParam("FunctionalName", string.Empty, 0, 35)
+                .AddParam("FunctionalNameLANG", "en -- English", 0, 20)
+                .AddParam("GrossWeight", string.Empty, 0, 10)
                 .AddParam("GrossWeightUOM", MassUOM)
-                .AddParam("Height", string.Empty, 10, 0)
+                .AddParam("Height", string.Empty, 0, 10)
                 .AddParam("HeightUOM", DimensionsUOM)
-                .AddParam("InnerPack", string.Empty, 10, 0)
+                .AddParam("InnerPack", string.Empty, 0, 10)
                 .AddParam("IsBaseUnit", booleanVV)
                 .AddParam("IsConsumerUnit", booleanVV)
                 .AddParam("IsDispatchUnit", booleanVV)
-                .AddParam("IsDispatchUnitRDD", "ALL")
+                .AddParam("IsDispatchUnitRDD", "ALL", 0, 10)
                 .AddParam("IsInvoiceUnit", booleanVV)
-                .AddParam("IsInvoiceUnitRDD", "ALL")
+                .AddParam("IsInvoiceUnitRDD", "ALL", 0, 10)
                 .AddParam("IsOrderableUnit", booleanVV)
-                .AddParam("IsOrderableUnitRDD", "ALL")
-                .AddParam("IsVariableWeightItem", "false -- FALSE")
-                .AddParam("MinimumTradeItemLifespanFromArrival", string.Empty, 4, 0)
-                .AddParam("MinimumTradeItemLifespanFromArrivalRDD", "ALL")
-                .AddParam("MinimumTradeItemLifespanFromProduction", string.Empty, 4, 0)
-                .AddParam("MinimumTradeItemLifespanFromProductionRDD", "ALL")
-                .AddParam("NetContent", string.Empty, 10, 0)
+                .AddParam("IsOrderableUnitRDD", "ALL", 0, 10)
+                .AddParam("IsVariableWeightItem", "false -- FALSE", 0, 10)
+                .AddParam("MinimumTradeItemLifespanFromArrival", string.Empty, 0, 4)
+                .AddParam("MinimumTradeItemLifespanFromArrivalRDD", "ALL", 0, 10)
+                .AddParam("MinimumTradeItemLifespanFromProduction", string.Empty, 0, 4)
+                .AddParam("MinimumTradeItemLifespanFromProductionRDD", "ALL", 0, 10)
+                .AddParam("NetContent", string.Empty, 0, 10)
                 .AddParam("NetContentUOM", AreaCountDimensionInfostorageMassVolumeUOM)
-                .AddParam("NetWeight", string.Empty, 10, 0)
+                .AddParam("NetWeight", string.Empty, 0, 10)
                 .AddParam("NetWeightUOM", MassUOM)
-                .AddParam("NonGTINPalletHi", string.Empty, 10, 0)
-                .AddParam("NonGTINPalletHiRDD", "ALL")
-                .AddParam("NonGTINPalletTi", string.Empty, 10, 0)
-                .AddParam("NonGTINPalletTiRDD", "ALL")
-                .AddParam("NumberOfItemsPerPallet", string.Empty, 10, 0)
-                .AddParam("NumberOfItemsPerPalletRDD", "ALL")
+                .AddParam("NonGTINPalletHi", string.Empty, 0, 10)
+                .AddParam("NonGTINPalletHiRDD", "ALL", 0, 10)
+                .AddParam("NonGTINPalletTi", string.Empty, 0, 10)
+                .AddParam("NonGTINPalletTiRDD", "ALL", 0, 10)
+                .AddParam("NumberOfItemsPerPallet", string.Empty, 0, 10)
+                .AddParam("NumberOfItemsPerPalletRDD", "ALL", 0, 10)
                 .AddParam("PackagingMarkedReturnable", booleanVV)
-                .AddParam("ProductDescription", string.Empty, 200, 0)
-                .AddParam("ProductDescriptionLANG", "en -- English")
-                .AddParam("QuantityOfNextLevelWithinInnerPack", string.Empty, 10, 0)
-                .AddParam("ShortDescription", string.Empty, 10, 0)
-                .AddParam("ShortDescriptionLANG", "en -- English")
+                .AddParam("ProductDescription", string.Empty, 0, 200)
+                .AddParam("ProductDescriptionLANG", "en -- English", 0, 20)
+                .AddParam("QuantityOfNextLevelWithinInnerPack", string.Empty, 0, 10)
+                .AddParam("ShortDescription", string.Empty, 0, 10)
+                .AddParam("ShortDescriptionLANG", "en -- English", 0, 20)
                 .AddParam("StartAvailabilityDate", DateTime.Now)
                 .AddParam("StartAvailabilityDateRDD", "ALL")
-                .AddParam("TotalQuantityOfNextLowerTradeItem", string.Empty, 10, 0)
-                .AddParam("Volume", string.Empty, 10, 0)
+                .AddParam("TotalQuantityOfNextLowerTradeItem", string.Empty, 0, 10)
+                .AddParam("Volume", string.Empty, 0, 10)
                 .AddParam("VolumeUOM", VolumeUOM)
-                .AddParam("Width", string.Empty, 10, 0)
+                .AddParam("Width", string.Empty, 0, 10)
                 .AddParam("WidthUOM", DimensionsUOM)
-                .AddParam("TradeItemTemperatureInformation_groupController", "GroupBreak")
-                .AddParam("TradeItemTemperatureInformation_temperatureQualifierCode", "STORAGE_HANDLING -- Trade Item is being stored or handled.")
-                .AddParam("TradeItemTemperatureInformation_maximumTemperature", string.Empty, 4, 0)
-                .AddParam("TradeItemTemperatureInformation_maximumTemperatureUOM", "FAH -- Degree Fahrenheit")
-                .AddParam("TradeItemTemperatureInformation_minimumTemperature", string.Empty, 4, 0)
-                .AddParam("TradeItemTemperatureInformation_minimumTemperatureUOM", "FAH -- Degree Fahrenheit").Params;
+                .AddParam("TradeItemTemperatureInformation_groupController", "GroupBreak", 0, 10)
+                .AddParam("TradeItemTemperatureInformation_temperatureQualifierCode", "STORAGE_HANDLING -- Trade Item is being stored or handled.", 0, 10)
+                .AddParam("TradeItemTemperatureInformation_maximumTemperature", string.Empty, 0, 4)
+                .AddParam("TradeItemTemperatureInformation_maximumTemperatureUOM", "FAH -- Degree Fahrenheit", 0, 10)
+                .AddParam("TradeItemTemperatureInformation_minimumTemperature", string.Empty, 0, 4)
+                .AddParam("TradeItemTemperatureInformation_minimumTemperatureUOM", "FAH -- Degree Fahrenheit", 0, 10).Params;
         }
-        private IConfiguration Configuration { get; }
-        public Layout(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        */
+
     }
 }

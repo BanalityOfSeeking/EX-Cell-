@@ -50,7 +50,7 @@ namespace EXCell.DataStructure
             }
         }
 
-        public Sheet CreateFirstRow(ParamBuilder builder)
+        public ISheet CreateFirstRow(ParamBuilder builder)
         {
             LoadRow(builder.Params);
             Manager.Configs.ConfigurationComplete();
@@ -59,7 +59,7 @@ namespace EXCell.DataStructure
             return this;
         }
 
-        public Sheet CreateFirstRow()
+        public ISheet CreateFirstRow()
         {
             if (Manager.Configs.IsConfigurationComplete)
             {               
@@ -69,7 +69,7 @@ namespace EXCell.DataStructure
             return this;
         }
 
-        public Sheet LoadRow(IEnumerable<IParam> items)
+        public ISheet LoadRow(IEnumerable<IParam> items)
         {
             if (items is null)
             {

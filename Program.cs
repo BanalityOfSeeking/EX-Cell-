@@ -1,22 +1,29 @@
 ﻿using EXCell.ConfigurationStore;
+using EXCell.DataStructure;
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
 
 namespace EXCell
 {
     internal static class Program
+    { 
+    static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            WorkBookFactory wbFactory = new WorkBookFactory();
-            var wb = wbFactory.GetWorkbook();
-            //add new sheet
-            wb.AddSheet()
-                // Get Current Sheet
-                .CurrentSheet
-                // load the layout by pass the prebuilt  layout into the Sheet
-                .LoadRow(new EXCell.Layouts.Layout(wb.Configuration)
-                // Call LayoutParams to get the layout params to load into Sheet 
-                .LayoutParams(wb.CurrentSheet.Manager));
-
-        }
+        GameManager Manager = new GameManager();
+        Game ThisGame = new Game()
+            .Config("AltonKoh Game")
+            .ConfigPlayer("Player1")
+            .ConfigureMonster("Monster1")
+            .ConfigureEquipement()
+            .ConfigureInventory();
+        Manager.Start(ThisGame);
+    }
     }
 }

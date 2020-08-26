@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Xml;
 using System.Xml.Schema;
@@ -16,9 +17,10 @@ namespace EXCell.DataStructure
         public IRowLayoutManager Manager { get; }
       
         public DataTable SheetTable { get; }
-        public Sheet CreateFirstRow(ParamBuilder builder);
-        public Sheet CreateFirstRow();
-        public Sheet LoadRow(IEnumerable<IParam> items);
+        public ISheet CreateFirstRow(ParamBuilder builder);
+        public ISheet CreateFirstRow();
+        public ISheet LoadRow(IEnumerable<IParam> items);
 
     }
+    
 }

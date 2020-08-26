@@ -10,13 +10,8 @@ namespace EXCell.DataStructure
     public struct Cell : ICell
     {
         public object Options { get; }
-        internal Cell(IParam cellParams)
-        {
-            Value = cellParams.Value;
-            Name = cellParams.Name;
-            Options = cellParams.Options;
-        }
-        public Cell(Param cellParams)
+
+        public Cell(IParam cellParams)
         {
             Value = string.Empty;
             Name = cellParams.Name;

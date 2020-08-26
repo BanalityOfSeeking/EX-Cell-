@@ -9,6 +9,6 @@ namespace EXCell.Layouts
 {
     public interface ILayout
     {
-        IEnumerable<IParam> LayoutParams(IRowLayoutManager manager);
+        IEnumerable<IParam> LayoutParams();
     }
 }

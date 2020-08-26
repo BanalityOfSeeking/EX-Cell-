@@ -4,43 +4,85 @@ using System.Collections.Generic;
 
 namespace EXCell.DataStructure
 {
-    public struct ParamBuilder
+    public class ParamBuilder : IParamBuilder
     {
         public IRowLayoutManager Manager { get; }
-
-        public IEnumerable<IParam> Params => Manager.Configs.Columns; 
-        public ParamBuilder(IRowLayoutManager manager)
+        private IList<IParam> NoManager { get; }
+        public IEnumerable<IParam> Params => Manager == null ? NoManager : Manager.Configs.Columns;
+        public ParamBuilder(IRowLayoutManager manager = null)
         {
-            Manager = manager;
+            if (manager == null)
+            {
+                NoManager = new List<IParam>();
+            }
+            else
+            {
+                Manager = manager;
+            }
         }
 
         public ParamBuilder AddParam(string name, string text, int min, int max)
         {
-            Manager.AddConfig(new Param(name, text, min, max));
+            if (Manager == null)
+            {
+                NoManager.Add(new Param(name, text, min, max));
+            }
+            else
+            {
+                Manager.AddConfig(new Param(name, text, min, max));
+            }
             return this;
         }
 
         public ParamBuilder AddParam(string name, string constant)
         {
-            Manager.AddConfig(new Param(name, constant, -1, -1));
+            if (Manager == null)
+            {
+                NoManager.Add(new Param(name, constant, -1, -1));
+            }
+            else
+            {
+                Manager.AddConfig(new Param(name, constant, -1, -1));
+            }
             return this;
         }
 
         public ParamBuilder AddParam(string name, IEnumerable<string> list)
         {
-            Manager.AddConfig(new Param(name, list));
+            if (Manager == null)
+            {
+                NoManager.Add(new Param(name, list));
+            }
+            else
+            {
+                Manager.AddConfig(new Param(name, list));
+            }
             return this;
         }
 
         public ParamBuilder AddParam(string name, int integer)
         {
-            Manager.AddConfig(new Param(name, integer));
+            if (Manager == null)
+            {
+                NoManager.Add(new Param(name, integer));
+            }
+            else
+            {
+                Manager.AddConfig(new Param(name, integer));
+            }
             return this;
         }
 
         public ParamBuilder AddParam(string name, DateTime date)
         {
-            Manager.AddConfig(new Param(name, date));
+            if (Manager == null)
+            {
+                NoManager.Add(new Param(name, date));
+            }
+            else
+            {
+                Manager.AddConfig(new Param(name, date));
+            }
             return this;
         }
     }
