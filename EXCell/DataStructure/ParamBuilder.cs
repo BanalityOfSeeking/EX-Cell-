@@ -9,6 +9,7 @@ namespace EXCell.DataStructure
         public IRowLayoutManager Manager { get; }
         private IList<IParam> NoManager { get; }
         public IEnumerable<IParam> Params => Manager == null ? NoManager : Manager.Configs.Columns;
+
         public ParamBuilder(IRowLayoutManager manager = null)
         {
             if (manager == null)

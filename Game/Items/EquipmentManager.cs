@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 
 namespace EXCell
 {
@@ -21,17 +20,17 @@ namespace EXCell
             new EquipId("Iron FaceMask", 2, 2, EquipType.Helmets),
             new EquipId("ForceField", 3, 3, EquipType.Helmets),
                 //chest
-            new EquipId("Bare Chest", 0, 0, EquipType.Armors),
+            new EquipId("Vest", 0, 0, EquipType.Armors),
             new EquipId("Leather Armor", 1, 0, EquipType.Armors),
             new EquipId("Plate Armor", 2, 1, EquipType.Armors),
             new EquipId("Chain Mail", 3, 2, EquipType.Armors),
                 //arms
-            new EquipId("Tatoos", 0, 0, EquipType.Weapons),
+            new EquipId("Bare Hands", 0, 0, EquipType.Weapons),
             new EquipId("Sword & Shield", 1, 2, EquipType.Weapons),
             new EquipId("Long Sword", 2, 3, EquipType.Weapons),
             new EquipId("Flaming Sword", 3, 5, EquipType.Weapons),
                 //legs
-            new EquipId("Legs", 0, 0, EquipType.LegGuards),
+            new EquipId("Shorts", 0, 0, EquipType.LegGuards),
             new EquipId("Pads", 1, 2, EquipType.LegGuards)
         };
 
@@ -58,12 +57,12 @@ namespace EXCell
             return Id;
         }
     }
-    public static class EquipementManager
+
+    public static class EquipementRulesManagerExtensions
     {
         public static void LoadEquipmentProgressionList(this EquipmentRulesManager manager, IReadOnlyList<EquipId> equipRules)
         {
             manager.Rules = equipRules;
         }
     }
-        
 }

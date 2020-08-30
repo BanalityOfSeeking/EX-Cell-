@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace EXCell.DataStructure
 {
-    public class ReadOnlyRow
+    public class ReadOnlyRow : IReadOnlyRow
     {
         public int RowId { get; }
         internal IRowLayoutManager Manager;

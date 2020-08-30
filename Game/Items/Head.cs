@@ -1,18 +1,28 @@
-﻿
-namespace EXCell
+﻿namespace EXCell
 {
-    public class Head : Equipment
+    public class Head : IEquipment, IDisplayUnit
     {
-        EquipmentRulesManager EquipManager { get; }
-        public Head(EquipmentRulesManager ruler)
+        private IEquipmentRulesManager EquipManager { get; }
+        public IEquipId Id { get; set; }
+
+        public string DisplayUnit { get; set; } = "0";
+
+        public int Top { get; }
+
+        public int Left { get; }
+
+        public Head(IEquipmentRulesManager ruler)
         {
             EquipManager = ruler;
             Id = new EquipId("", 0, 0, EquipType.Helmets);
-            Id = EquipManager.ApplyRule(Id);
+            ProgressHead();
         }
-        public void ProgressHead()
+
+        public void ProgressHead() => Id = ((IEquipment)this).Progress(EquipManager);
+
+        public void Display2ndUnit()
         {
-            Id = Progress(EquipManager);
+            throw new System.NotImplementedException();
         }
     }
 }

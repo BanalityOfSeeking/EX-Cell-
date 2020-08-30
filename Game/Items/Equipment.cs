@@ -1,16 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.CompilerServices;
-
-namespace EXCell
+﻿namespace EXCell
 {
-    public class Equipment : IEquipment
+    public interface IEquipment
     {
-        public IEquipId Id { get; internal set; }
-        public Equipment()
-        {
-        }
-        public IEquipId Progress(EquipmentRulesManager equipRuler)
+        public IEquipId Id { get; }
+
+        public sealed IEquipId Progress(IEquipmentRulesManager equipRuler)
         {
             return equipRuler.ApplyRule(Id);
         }

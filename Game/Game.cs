@@ -7,35 +7,40 @@ namespace EXCell
     public class Game
     {
         public Random GameRoller = new Random();
-        private string Name { get; set; }
         private Player Player1 { get; set; }
-        private Monster Monster { get; set; }
+        private Monster Monster1 { get; set; }
         private EquipmentRulesManager EquipMgr { get; set; }
         private PlayerItems PlayerEquips { get; set; }
         private GameManager Manager { get; set; }
+
         public Game()
         {
         }
 
-        public Game Config(string name)
-        {
-            Name = name;
-            return this;
-        }
         public Game ConfigPlayer(string player)
         {
             Player1 = new Player();
-            Player1 = Player1.SetPlayerName(player);
+            Console.Write(Player1.DisplayUnit,
+                Player1.Health.CurrentHealth.ToString(),
+                Player1.CurrentXP.ToString(),
+                Player1.Level.ToString(),
+                Player1.Name,
+                "0",
+                "/", "|", @"\",
+                "/", @"\");
             return this;
         }
+
         public Game ConfigureMonster(string monster)
         {
-            Monster = new Monster(monster, 100, GameRoller);
+            Monster1 = new Monster();
+            Monster1.Display2ndUnit();
             return this;
         }
+
         public Game ConfigureEquipement(IReadOnlyList<EquipId> equips = default)
         {
-            if(equips == default)
+            if (equips == default)
             {
                 EquipMgr = new EquipmentRulesManager();
             }
@@ -46,41 +51,42 @@ namespace EXCell
             }
             return this;
         }
+
         public Game ConfigureInventory()
         {
             PlayerEquips = new PlayerItems(EquipMgr);
             return this;
         }
+
         public void StartGame(GameManager manager)
         {
-            if(Name == null | Player1 == null | Monster == null | EquipMgr == null | PlayerEquips == null)
+            if (Player1 == default | Monster1 == null | EquipMgr == null | PlayerEquips == null)
             {
                 WriteLine("Not Configured correctly");
                 return;
             }
             Manager = manager;
-            
-            WriteLine("Welcome {0}!!", Player1.Name);
-            WriteLine("You {0} have {1} health", Player1.Name, Player1.Health);
-            WriteLine("The Monster has {0} health.", Monster.Health);
-            if (Monster.HasTreasure)
+            var pHealth = 100 + (Manager.WinCount * 10);
+            var dHealth = 100 + (Manager.WinCount * 10);
+
+            WriteLine("Welcome {0}!!", nameof(Player1));
+            WriteLine("You {0} have {1} health", nameof(Player1), pHealth);
+            WriteLine("The Monster has {0} health.", dHealth);
+            if (Monster1.HasTreasure)
             {
                 WriteLine("This Monster has treasure!");
             }
-            WriteLine("Good luck {0}.", Player1.Name);
+            WriteLine("Good luck {0}.", nameof(Player1));
             WriteLine("Press any key to continue ");
             ReadKey(false);
-
-            var pHealth = Player1.Health + (Manager.WinCount * 10);
-            var dHealth = Monster.Health + (Manager.WinCount * 10);
 
             while (pHealth > 0 && dHealth > 0)
             {
                 var PlayerRoll = GameRoller.Next(10, 99);
                 var DragonRoll = GameRoller.Next(10, 99);
 
-                WriteLine("You have roll {0}.", PlayerRoll);
-                WriteLine("The dragon roll {0}", DragonRoll);
+                WriteLine("You have rolled {0}.", PlayerRoll);
+                WriteLine("The dragon rolled {0}", DragonRoll);
 
                 if (PlayerRoll > DragonRoll)
                 {
@@ -91,11 +97,11 @@ namespace EXCell
                     }
                     else
                     {
-                        if (Monster.HasTreasure)
+                        if (Monster1.HasTreasure)
                         {
-                            PlayerEquips.UpgradeItem(Monster.TreasureCode);
+                            PlayerEquips.UpgradeItem(Monster1.TreasureCode);
                         }
-                        Win(Player1.Name, pHealth);
+                        Win(nameof(Player1), pHealth);
                     }
                 }
                 else
@@ -103,41 +109,43 @@ namespace EXCell
                     pHealth -= 10;
                     if (pHealth > 0)
                     {
-                        WriteLine("{0} have left {1} health", Player1.Name, pHealth);
+                        WriteLine("{0} have left {1} health", nameof(Player1), pHealth);
                     }
                     else
                     {
-                        Lose(Player1.Name, dHealth);
+                        Lose(nameof(Player1), dHealth);
                     }
                 }
                 WriteLine("Press any key to continue ");
                 ReadKey(false);
             }
         }
+
         public void Restart(string Name)
         {
             WriteLine("{0} died, do you want to start a new character? press y to continue or any key to exit", Name);
             var c = ReadKey(true).KeyChar;
             if (c == 'y')
             {
-                Player1 = new Player().SetPlayerName(ReadLine());
-                Monster = new Monster("Monster", 100 + (Manager.WinCount * 10), GameRoller);
+                Player1 = new Player();
+                PlayerEquips = new PlayerItems(EquipMgr);
                 StartGame(Manager);
             }
             return;
         }
+
         public void Continue(string name)
         {
             WriteLine("{0} won, do you want to start another game? press y to continue or any key to exit", name);
             var c = ReadKey(true).KeyChar;
             if (c == 'y')
             {
-                Player1 = new Player().SetPlayerName(name);
-                Monster = new Monster("Monster", 100, GameRoller);
+                Monster1 = new Monster();
                 StartGame(Manager);
             }
             return;
         }
+
         public void Lose(string name, int health)
         {
             Manager.WinCount = 0;
@@ -145,6 +153,7 @@ namespace EXCell
             WriteLine("The Monster has {0} health left.", health);
             Restart(name);
         }
+
         public void Win(string name, int health)
         {
             Manager.WinCount += 1;

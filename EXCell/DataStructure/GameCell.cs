@@ -1,32 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace EXCell.DataStructure
 {
-    /// <summary>
-    /// Cell stores a dynamic value.
-    /// TEXT, LIST,
-    /// </summary>
-    public struct Cell : ICell
+    public struct GameCell : IGameCell
     {
-        public object Options { get; }
-
-        public Cell(IParam cellParams)
-        {
-            Value = string.Empty;
-            Name = cellParams.Name;
-            Options = cellParams.Options;
-        }
-
         public string Name { get; }
-        public string Value { get; set; }
+
+        public object Value { get; set; }
+
+        public object Options { get; set; }
 
         public override bool Equals(object obj)
         {
-            return obj is ICell cell && Equals(cell);
+            return obj is IGameCell cell && Equals(cell);
         }
 
-        public bool Equals(Cell other)
+        public bool Equals(IGameCell other)
         {
             return EqualityComparer<object>.Default.Equals(Name, other.Name);
         }
@@ -42,19 +31,16 @@ namespace EXCell.DataStructure
             {
                 return true;
             }
-
-            if (x == null || y == null)
+            else if (x == null || y == null)
             {
                 return false;
             }
-
-            if (x is ICell a
-                && y is ICell b)
+            else if (x is IGameCell a
+                && y is IGameCell b)
             {
                 return Equals(a, b);
             }
-
-            throw new ArgumentException("", nameof(x));
+            else { return default; }
         }
 
         public int GetHashCode(object obj)
@@ -64,20 +50,19 @@ namespace EXCell.DataStructure
                 return 0;
             }
 
-            if (obj is ICell x)
+            if (obj is IGameCell x)
             {
                 return GetHashCode(x);
             }
-
-            throw new ArgumentException("", nameof(obj));
+            return default;
         }
 
-        public static bool operator ==(Cell left, Cell right)
+        public static bool operator ==(GameCell left, IGameCell right)
         {
             return left.Equals(right);
         }
 
-        public static bool operator !=(Cell left, Cell right)
+        public static bool operator !=(GameCell left, IGameCell right)
         {
             return !(left == right);
         }

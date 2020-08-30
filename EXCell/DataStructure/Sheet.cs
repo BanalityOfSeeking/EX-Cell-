@@ -1,11 +1,9 @@
 ﻿using EXCell.ConfigurationStore;
-using EXCell.Layouts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml;
 using System.Xml.Schema;
@@ -31,6 +29,7 @@ namespace EXCell.DataStructure
             Manager = info.GetValue("Manager", typeof(RowLayoutManager)) as RowLayoutManager;
             RowArray = info.GetValue("RowArray", typeof(ReadOnlyRow)) as ReadOnlyRow[];
         }
+
         public Sheet(IRowLayoutManager manager, DataTable sheetTable)
         {
             Manager = manager;
@@ -54,7 +53,7 @@ namespace EXCell.DataStructure
         {
             LoadRow(builder.Params);
             Manager.Configs.ConfigurationComplete();
-            RowArray[0] = new ReadOnlyRow(Manager); 
+            RowArray[0] = new ReadOnlyRow(Manager);
             SheetTable.Rows.Add(SheetTable.NewRow());
             return this;
         }
@@ -62,7 +61,7 @@ namespace EXCell.DataStructure
         public ISheet CreateFirstRow()
         {
             if (Manager.Configs.IsConfigurationComplete)
-            {               
+            {
                 RowArray[0] = new ReadOnlyRow(Manager);
                 SheetTable.Rows.Add(SheetTable.NewRow());
             }
@@ -128,6 +127,25 @@ namespace EXCell.DataStructure
         public void WriteXml(XmlWriter writer)
         {
             ((IXmlSerializable)SheetTable).WriteXml(writer);
+        }
+    }
+
+    public class GameSheet
+    {
+        public IRowLayoutManager Manager { get; } = new RowLayoutManager(new CellConfiguration());
+
+        public IReadOnlyRow AddRow(ParamBuilder builder)
+        {
+            foreach (var Item in builder.Params)
+            {
+                Manager.AddConfig(Item);
+            }
+            return new ReadOnlyRow(Manager);
+        }
+
+        public IEnumerable<IGameCell> QueryCellOfType<T>(IGameCell type) where T : class
+        {
+            throw new NotImplementedException();
         }
     }
 }

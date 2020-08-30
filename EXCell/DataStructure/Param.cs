@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 
 namespace EXCell.DataStructure
 {
@@ -11,9 +9,9 @@ namespace EXCell.DataStructure
         public string Name { get; }
 
         public object Options { get; }
+
         public Param(string name, string text, int min, int max)
         {
-
             MinLen = min;
             MaxLen = max;
             Value = text;
@@ -48,13 +46,12 @@ namespace EXCell.DataStructure
 
         public Param(string name, DateTime date) : this(name, date.ToString("yyyy-MM-dd'T'HH:mm:ss"), -1, -1)
         {
-            Name = name; 
-            Value = date.ToString("yyyy-MM-dd'T'HH:mm:ss"); 
-            MinLen = -1; 
+            Name = name;
+            Value = date.ToString("yyyy-MM-dd'T'HH:mm:ss");
+            MinLen = -1;
             MaxLen = -1;
             Options = null;
             ParamType = typeof(DateTime);
-
         }
 
         public string Value { get; }
@@ -62,12 +59,10 @@ namespace EXCell.DataStructure
         public int MinLen { get; internal set; }
     }
 
-
     public class GenericParam<T> : IGenericParam<T> where T : class
     {
-        public GenericParam(T component, Func<T,T> configuration = null, IParam param = default)
+        public GenericParam(T component, Func<T, T> configuration = null, IParam param = default)
         {
-
             Configuration = configuration ?? default;
             if (Configuration != default)
             {
@@ -76,11 +71,10 @@ namespace EXCell.DataStructure
             else
             {
                 Component = component;
-
             }
             Param = param;
-
         }
+
         public T Component { get; }
 
         public Func<T, T> Configuration { get; }

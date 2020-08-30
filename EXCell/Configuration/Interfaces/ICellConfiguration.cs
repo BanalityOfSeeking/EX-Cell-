@@ -5,7 +5,7 @@ using System.Linq;
 namespace EXCell.ConfigurationStore
 {
     public interface ICellConfiguration
-    {        
+    {
         int ColumnCount { get; }
         IEnumerable<int> ColumnIds => RowConfiguration.Keys;
         IEnumerable<IParam> Columns => RowConfiguration.Values;

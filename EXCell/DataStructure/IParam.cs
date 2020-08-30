@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.IO;
 
 namespace EXCell.DataStructure
 {
@@ -12,6 +10,5 @@ namespace EXCell.DataStructure
         string Name { get; }
         object Options { get; }
         string Value { get; }
-
     }
 }

@@ -1,19 +1,13 @@
 ﻿// ***********************************************************************
 
-
-using EXCell.ConfigurationStore;
-using EXCell.DataStructure;
-using Microsoft.Extensions.Configuration; 
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace EXCell.Layouts
 {
     public static class Layout
     {
-        public static readonly IReadOnlyCollection<string> productTypes = new List<string> 
-        { 
+        public static readonly IReadOnlyCollection<string> productTypes = new List<string>
+        {
             "CA -- CASE",
             "DS -- Display",
             "EA -- Each",
@@ -22,7 +16,6 @@ namespace EXCell.Layouts
             "PL -- Pallet",
             "TL -- TRANSPORT_LOAD"
         };
-
 
         public static readonly IReadOnlyCollection<string> dataCarrierTypeCodes = new List<string>
         {
@@ -711,7 +704,7 @@ namespace EXCell.Layouts
             "FAH -- Degree Fahrenheit",
             "KEL -- Kelvin"
         };
-        
+
         public static readonly IReadOnlyCollection<string> booleanVV = new List<string> { "true -- TRUE", "false -- FALSE" };
 
         public static readonly IReadOnlyCollection<string> RecordType = new List<string> { "ITEM -- ITEM", "MORE -- MORE" };
@@ -801,6 +794,5 @@ namespace EXCell.Layouts
                 .AddParam("TradeItemTemperatureInformation_minimumTemperatureUOM", "FAH -- Degree Fahrenheit", 0, 10).Params;
         }
         */
-
     }
 }

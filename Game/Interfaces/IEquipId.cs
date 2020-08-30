@@ -1,11 +1,9 @@
 ﻿namespace EXCell
 {
-    public interface IEquipId
+    public interface IEquipId : IBaseEntity
     {
-        string Name { get; }
         int Value { get; }
         int Enchantment { get; }
         EquipType EquipmentType { get; }
     }
-
 }

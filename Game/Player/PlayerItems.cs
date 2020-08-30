@@ -1,4 +1,5 @@
 ﻿using static System.Console;
+
 namespace EXCell
 {
     public class PlayerItems : IPlayerItems
@@ -53,6 +54,7 @@ namespace EXCell
                     }
             }
         }
+
         public int TotalEnchantments => Hood.Id.Enchantment + Armor.Id.Enchantment + Guards.Id.Enchantment + Pads.Id.Enchantment;
     }
 }
