@@ -9,14 +9,12 @@ namespace EXCell
             Console.SetWindowSize(45, 15);
             Console.SetBufferSize(45, 15);
             Console.SetWindowSize(60, 15);
-
+            
             GameManager Manager = new GameManager();
 
             Game ThisGame = new Game()
-            .ConfigPlayer("Player1")
-            .ConfigureMonster("Monster1")
-            .ConfigureEquipement()
-            .ConfigureInventory();
+            .ConfigureEquipement();
+            SceneManager.DisplayScene(ThisGame);
             Manager.Start(ThisGame);
         }
     }

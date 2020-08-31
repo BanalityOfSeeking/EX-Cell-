@@ -4,90 +4,67 @@ using System.Collections.Generic;
 
 namespace EXCell
 {
-    public interface IGamePools<T, S> where T : class, new() where S : class, new()
+    public interface IGamePool<T> where T : class, new()
     {
-        public ObjectPool<T> Players { get; }
-        public ObjectPool<S> Monsters { get; }
+        public ObjectPool<T> Pool { get; }
 
         public T Get();
 
         public void Return(T obj);
-
-        public void Get(out S obj);
-
-        public void Return(S obj);
     }
 
-    public class GamePools : IGamePools<Player, Monster>
+    public class GamePool<T> : IGamePool<T> where T : class, new()
     {
-        public ObjectPool<Player> Players { get; }
+        public ObjectPool<T> Pool { get; } = ObjectPool.Create<T>();
 
-        public ObjectPool<Monster> Monsters { get; }
-
-        public GamePools()
+        public T Get()
         {
-            Players = ObjectPool.Create<Player>();
-            Monsters = ObjectPool.Create<Monster>();
+            return Pool.Get();
         }
 
-        public Player Get()
+        public void Return(T obj)
         {
-            return Players.Get();
-        }
-
-        public void Return(Player obj)
-        {
-            Players.Return(obj);
-        }
-
-        public void Get(out Monster obj)
-        {
-            obj = Monsters.Get();
-        }
-
-        public void Return(Monster obj)
-        {
-            Monsters.Return(obj);
+            Pool.Return(obj);
         }
     }
 
-    public class Monster : IDoDamage<Player>, IDamageable, IBaseEntity, IDisplayUnit, ICarry, IDrop
+    public interface IPoolGameObject
+    {
+        IGamePool<Player> PlayerPool { get; } 
+        IGamePool<Monster> MonstePool { get; }
+    }
+    public class GamePools : IPoolGameObject
+    {
+        public IGamePool<Player> PlayerPool { get; } = new GamePool<Player>();
+
+        public IGamePool<Monster> MonstePool { get; } = new GamePool<Monster>();
+    }
+
+    public class Monster : IDoDamage<IDamageable>, IDamageable, IBaseEntity, IDisplay, ICarry, IDrop
     {
         public IHealth Health { get; } = new MonsterHealth<HealthProgression>();
         public int XP { get; } = 10;
 
         public string Name { get; } = "Monster";
 
-        public string DisplayUnit { get; }
-
-        public List<string> Unit2 = new List<string>()
+        public List<string> Unit = new List<string>()
                 {
-                    @"-------/o|o\ --",
-                    @"      \| = |/  ",
-                    @"       | | |   ",
+                    @"  /o|o\"  ,
+                    @" \| = |/  ",
+                    @"  | | |  ",
                 };
-
-        public void Display2ndUnit()
-        {
-            int i = 0;
-            Console.SetCursorPosition(Left, Top);
-            foreach (string d in Unit2)
-            {
-                i++;
-                Console.WriteLine(d);
-                Console.SetCursorPosition(Left, Top + i);
-            }
-        }
 
         public bool HasTreasure { get; set; }
 
         public int TreasureCode { get; set; }
 
-        public int Top { get; set; } = 7;
+        List<string> IDisplay.Unit => throw new NotImplementedException();
 
-        public int Left { get; set; } = 15;
+        public int X => 15;
 
-        public void DoDamage(Player target)
+        public int Y => 7;
+
+        public void DoDamage(IDamageable target)
         {
             target.TakeDamage(10);
         }
@@ -95,7 +72,6 @@ namespace EXCell
         public void TakeDamage(int amount)
         {
             Health.CurrentHealth -= amount;
-            Health.Status = Health.GetHealthDescriptor(Health.CurrentHealth);
         }
     }
 }

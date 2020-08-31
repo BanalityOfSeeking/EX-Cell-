@@ -2,11 +2,10 @@
 
 namespace EXCell
 {
-    public interface IHealth : IAnimatedHealth
+    public interface IHealth
     {
         public int MaxHealth { get; set; }
         public int CurrentHealth { get; set; }
         public string Status { get; set; }
-        public new List<(string Health, IEnumerable<int> Range)> HealthRanges { get; }
     }
 }

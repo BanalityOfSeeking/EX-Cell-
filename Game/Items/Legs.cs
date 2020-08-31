@@ -1,19 +1,18 @@
 ﻿namespace EXCell
 {
-    public class Legs : Equipment
+    public class Legs : IEquipment, ItemLeftRight
     {
-        private EquipmentRulesManager EquipManager { get; }
+        public IEquipId Id { get; set; }
 
-        public Legs(EquipmentRulesManager ruler)
+        public string Input { get; set; } = @"/ \";
+
+        public string Left() => Input.Split(" ")[0];
+        public string Right() => Input.Split(" ")[1];
+
+        public Legs()
         {
-            EquipManager = ruler;
             Id = new EquipId("", 0, 0, EquipType.LegGuards);
-            Id = EquipManager.ApplyRule(Id);
-        }
-
-        public void ProgressLegs()
-        {
-            Id = Progress(EquipManager);
+            Id = EquipmentRulesManager.ApplyRule(this);
         }
     }
 }

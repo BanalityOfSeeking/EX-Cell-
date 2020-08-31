@@ -1,44 +1,21 @@
-﻿namespace EXCell
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using static System.Console;
+
+namespace EXCell
 {
-    public class Player : IDoDamage<Monster>, IDamageable, IBaseEntity, IDisplayUnit, ILevelable
+    public partial class Player : IDoDamage<IDamageable>, IDamageable, IBaseEntity, ILevelable
     {
-        public string Name { get; set; } = "Player1";
 
-        public IHealth Health { get; } = new PlayerHealth<HealthProgression>();
+        public string Name { get; set; } = Console.ReadLine();
 
-        private static string BaseUnit =>
-                @"\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/" +
-                @"                              " + "\n" +
-                @"                              " + "\n" +
-                @"                              " + "\n" +
-                @"                              " + "\n" +
-                @"                              " + "\n" +
-                @"                              " + "\n" +
-                @"    {3}                       " + "\n" +
-                @"--------{4}-----              " + "\n" +
-                @"       {5}{6}{7}              " + "\n" +
-                @"  | | ({8}_{9})               " + "\n" +
-                @"==============================" + "\n" +
-                @"|=============================" + "\n" +
-                @"| Health:{0} XP:{1}               " + "\n" +
-                @"| Level {2}                     " + "\n" +
-                @"|=============================";
+        public IHealth Health { get; } = new PlayerHealth();
 
-        public string DisplayUnit
-        { get; set; } = BaseUnit;
+        public IPlayerItems Items { get; set; } = new PlayerItems();
 
-        public int CurrentXP { get; internal set; }
-        public int Level { get; internal set; }
-
-        public int Top => 0;
-
-        public int Left => 0;
-
-        public void DoDamage(Monster target)
-        {
-            target.TakeDamage(10);
-        }
-
+        public int CurrentXP { get; internal set; } = 0;
+        public int Level { get; internal set; } = 1;
         public void GainExpierence(int XP)
         {
             CurrentXP += XP;
@@ -52,12 +29,11 @@
         public void TakeDamage(int amount)
         {
             Health.CurrentHealth -= amount;
-            Health.GetHealthDescriptor(Health.CurrentHealth);
         }
 
-        public void Display2ndUnit()
+        public void DoDamage(IDamageable target)
         {
-            throw new System.NotImplementedException();
+            target.TakeDamage(10);
         }
     }
 }

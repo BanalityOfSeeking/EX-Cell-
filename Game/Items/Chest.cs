@@ -1,19 +1,14 @@
 ﻿namespace EXCell
 {
-    public class Chest : Equipment
+    public class Chest : IEquipment, Item
     {
-        private EquipmentRulesManager EquipManager { get; }
-
-        public Chest(EquipmentRulesManager ruler)
+        public IEquipId Id { get; set; }
+        public char Item => '_';
+        public Chest()
         {
-            EquipManager = ruler;
+
             Id = new EquipId("", 0, 0, EquipType.Armors);
-            Id = EquipManager.ApplyRule(Id);
-        }
-
-        public void ProgressChest()
-        {
-            Id = Progress(EquipManager);
+            Id = EquipmentRulesManager.ApplyRule(this);
         }
     }
 }

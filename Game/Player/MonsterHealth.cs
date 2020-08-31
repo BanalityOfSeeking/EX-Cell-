@@ -8,6 +8,5 @@ namespace EXCell
         public int MaxHealth { get; set; } = 100;
         public int CurrentHealth { get; set; }
         public string Status { get; set; }
-        public List<(string Health, IEnumerable<int> Range)> HealthRanges { get; } = HealthExetensions.InitHealthWithEnum<T>(9);
     }
 }

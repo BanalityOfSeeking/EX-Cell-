@@ -4,12 +4,12 @@ namespace EXCell
 {
     public class PlayerItems : IPlayerItems
     {
-        public PlayerItems(EquipmentRulesManager ruler)
+        public PlayerItems()
         {
-            Hood = new Head(ruler);
-            Armor = new Chest(ruler);
-            Pads = new Arms(ruler);
-            Guards = new Legs(ruler);
+            Hood = new Head();
+            Armor = new Chest();
+            Pads = new Arms();
+            Guards = new Legs();
         }
 
         public Head Hood { get; internal set; }
@@ -28,27 +28,27 @@ namespace EXCell
 
                 case 1:
                     {
-                        Pads.ProgressArms();
+                        Pads.ApplyRule();
                         WriteLine("Recieved {0} upgrade", Pads.Id.Name);
                         break;
                     }
 
                 case 2:
                     {
-                        Guards.ProgressLegs();
+                        Guards.ApplyRule();
                         WriteLine("Recieved {0} upgrade", Guards.Id.Name);
                         break;
                     }
 
                 case 3:
                     {
-                        Hood.ProgressHead();
+                        Hood.ApplyRule();
                         WriteLine("Recieved {0} upgrade", Hood.Id.Name);
                         break;
                     }
                 case 4:
                     {
-                        Armor.ProgressChest();
+                        Armor.ApplyRule();
                         WriteLine("Recieved {0} upgrade", Armor.Id.Name);
                         break;
                     }

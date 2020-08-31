@@ -3,14 +3,9 @@ using System.Linq;
 
 namespace EXCell
 {
-    public class EquipmentRulesManager : AbstractRulesManager<IEquipId, EquipType>, IEquipmentRulesManager
+    public static class EquipmentRulesManager
     {
         // make it as immutable as possible (assuming that's what you want)
-
-        public EquipmentRulesManager()
-        {
-            Rules = ProgressionList;
-        }
 
         internal static readonly IReadOnlyList<EquipId> ProgressionList = new List<EquipId>()
         {
@@ -34,35 +29,48 @@ namespace EXCell
             new EquipId("Pads", 1, 2, EquipType.LegGuards)
         };
 
-        public override IEnumerable<IEquipId> GetItemsOfType(EquipType itemType)
+        public static IReadOnlyList<IEquipId> Rules { get; internal set; }
+
+        public static IEnumerable<IEquipId> GetItemsOfType(this IEquipment equip)
         {
-            return Rules.Where(x => x.EquipmentType == itemType);
+            if (Rules != default)
+            {
+                return Rules.Where(x => x.EquipmentType == equip.Id.EquipmentType);
+            }
+            else
+            {
+                Rules = ProgressionList;
+                return Rules.Where(x => x.EquipmentType == equip.Id.EquipmentType);
+            }
         }
 
-        public override IEquipId ApplyRule(IEquipId item)
+        public static IEquipId ApplyRule(this IEquipment equip)
         {
             IEquipId Id;
-            if (item.Name != string.Empty)
+            if (equip.Id.Name != string.Empty)
             {
-                Id = GetItemsOfType(item.EquipmentType).FirstOrDefault(x => x.Value == item.Value + 1);
+                Id = GetItemsOfType(equip).FirstOrDefault(x => x.Value == equip.Id.Value + 1);
                 if (Id == default)
                 {
-                    Id = GetItemsOfType(item.EquipmentType).FirstOrDefault(x => x.Value == item.Value);
+                    Id = GetItemsOfType(equip).FirstOrDefault(x => x.Value == equip.Id.Value);
                 }
             }
             else
             {
-                Id = GetItemsOfType(item.EquipmentType).FirstOrDefault(x => x.Value == item.Value);
+                Id = GetItemsOfType(equip).FirstOrDefault(x => x.Value == equip.Id.Value);
             }
             return Id;
         }
-    }
-
-    public static class EquipementRulesManagerExtensions
-    {
-        public static void LoadEquipmentProgressionList(this EquipmentRulesManager manager, IReadOnlyList<EquipId> equipRules)
+        public static void LoadEquipmentProgressionList(IReadOnlyList<EquipId> equipRules = default)
         {
-            manager.Rules = equipRules;
+            if (equipRules == default)
+            {
+                Rules = equipRules;
+            }
+            else
+            {
+                Rules = ProgressionList;
+            }
         }
     }
 }
