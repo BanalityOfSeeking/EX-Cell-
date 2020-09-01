@@ -1,7 +1,9 @@
-﻿using static System.Console;
-
+﻿using System;
 namespace EXCell
 {
+    // need to cut scene for item upgrades
+    // removed Console reference. (not updated).
+
     public class PlayerItems : IPlayerItems
     {
         public PlayerItems()
@@ -28,28 +30,28 @@ namespace EXCell
 
                 case 1:
                     {
-                        Pads.ApplyRule();
-                        WriteLine("Recieved {0} upgrade", Pads.Id.Name);
+                        Pads.Id = Pads.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Pads.Id.Name);
                         break;
                     }
 
                 case 2:
                     {
-                        Guards.ApplyRule();
-                        WriteLine("Recieved {0} upgrade", Guards.Id.Name);
+                        Guards.Id = Guards.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Guards.Id.Name);
                         break;
                     }
 
                 case 3:
                     {
-                        Hood.ApplyRule();
-                        WriteLine("Recieved {0} upgrade", Hood.Id.Name);
+                        Hood.Id = Hood.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Hood.Id.Name);
                         break;
                     }
                 case 4:
                     {
-                        Armor.ApplyRule();
-                        WriteLine("Recieved {0} upgrade", Armor.Id.Name);
+                        Armor.Id = Armor.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Armor.Id.Name);
                         break;
                     }
             }

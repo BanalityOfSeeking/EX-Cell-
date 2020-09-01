@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using static System.Console;
 
 namespace EXCell
 {
     public partial class Player : IDoDamage<IDamageable>, IDamageable, IBaseEntity, ILevelable
     {
 
-        public string Name { get; set; } = Console.ReadLine();
+        public string Name { get; set; }
 
         public IHealth Health { get; } = new PlayerHealth();
 

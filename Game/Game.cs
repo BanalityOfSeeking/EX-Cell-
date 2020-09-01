@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using static System.Console;
+
 
 namespace EXCell
 {
@@ -17,42 +17,37 @@ namespace EXCell
         public Game ConfigureEquipement(IReadOnlyList<EquipId> equips = default)
         {
             EquipmentRulesManager.LoadEquipmentProgressionList(equips);
+            SceneManager.DisplayScene(this, SceneType.PlayerSetup);
             return this;
         }
+
         public Player Player1 = Pools.PlayerPool.Get();
         public Monster Monster1 = Pools.MonstePool.Get();
+
         public void StartGame(GameManager manager)
         {
-            Console.ReadLine();
             Manager = manager;
-            var PlayerHealth = 100 + (Manager.WinCount * 10);
-            var MonsterHealth = 100 + (Manager.WinCount * 10);
 
-            WriteLine("Welcome Enter your Name Challenger!!", Player1.Name = ReadLine());
-            WriteLine("You are now Sir {0} and have {1} health", Player1.Name, PlayerHealth);
-            WriteLine("The Monster has {0} health.", MonsterHealth);
-            if (Monster1.HasTreasure)
-            {
-                WriteLine("This Monster has treasure!");
-            }
-            WriteLine("Good luck {0}.", Player1.Name);
-            WriteLine("Press any key to continue ");
-            ReadKey(false);
+            SceneManager.DisplayScene(this, SceneType.MonsterScene);
 
-            while (PlayerHealth > 0 && MonsterHealth > 0)
+            Player1.Health.CurrentHealth = 100 + (Manager.WinCount * 10);
+            Monster1.Health.CurrentHealth = 100 + (Manager.WinCount * 10);
+
+
+            while (Player1.Health.CurrentHealth > 0 && Monster1.Health.CurrentHealth > 0)
             {
                 var PlayerRoll = GameRoller.Next(10, 99);
                 var MonsterRoll = GameRoller.Next(10, 99);
-
-                WriteLine("You have rolled {0}.", PlayerRoll);
-                WriteLine("The dragon rolled {0}", MonsterRoll);
+                Console.SetCursorPosition(0, 16);
+                Console.WriteLine("You have rolled {0}.", PlayerRoll);
+                Console.WriteLine("The Monster rolled {0}", MonsterRoll);
 
                 if (PlayerRoll > MonsterRoll)
                 {
-                    MonsterHealth -= 10;
-                    if (MonsterHealth > 0)
+                    Player1.DoDamage(Monster1);
+                    if (Monster1.Health.CurrentHealth > 0)
                     {
-                        WriteLine("The dragon health left is {0}", MonsterHealth);
+                        Console.WriteLine("The Monster health left is {0}", Monster1.Health.CurrentHealth);
                     }
                     else
                     {
@@ -60,34 +55,33 @@ namespace EXCell
                         {
                             Player1.Items.UpgradeItem(Monster1.TreasureCode);
                         }
-                        Win(nameof(Player1), PlayerHealth);
+                        Win(Player1.Name, Player1.Health.CurrentHealth);
                     }
                 }
                 else
                 {
-                    PlayerHealth -= 10;
-                    if (PlayerHealth > 0)
+                    Monster1.DoDamage(Player1);
+                    if (Player1.Health.CurrentHealth > 0)
                     {
-                        WriteLine("{0} have left {1} health", nameof(Player1), PlayerHealth);
+                        Console.WriteLine("{0} have left {1} health", Player1.Name, Player1.Health.CurrentHealth);
                     }
                     else
                     {
-                        Lose(nameof(Player1), MonsterHealth);
+                        Lose(Player1.Name, Monster1.Health.CurrentHealth);
                     }
                 }
+                Console.WriteLine("Press any key to continue ");
+                Console.ReadKey(false);
             }
-            WriteLine("Press any key to continue ");
-            ReadKey(false);
-
         }
 
         public void Restart(string Name)
         {
-            WriteLine("{0} died, do you want to start a new character? press y to continue or any key to exit", Name);
-            var c = ReadKey(true).KeyChar;
+            Console.WriteLine("{0} died, do you want to start a new character? press y to continue or any key to exit", Name);
+            var c = Console.ReadKey(true).KeyChar;
             if (c == 'y')
             {
-                WriteLine("Welcome Enter your Name Challenger!!", Player1.Name = ReadLine());
+                Console.WriteLine("Welcome Enter your Name Challenger!!", Player1.Name = Console.ReadLine());
                 Player1.Items = new PlayerItems();
                 StartGame(Manager);
             }
@@ -96,11 +90,12 @@ namespace EXCell
 
         public void Continue(string name)
         {
-            WriteLine("{0} won, do you want to start another game? press y to continue or any key to exit", name);
-            var c = ReadKey(true).KeyChar;
+            Console.WriteLine("{0} won, do you want to continue game? press y to continue or any key to exit", name);
+            var c = Console.ReadKey(true).KeyChar;
             if (c == 'y')
             {
-                Monster1 = new Monster();
+                Pools.MonstePool.Return(Monster1);
+                Monster1 = Pools.MonstePool.Get();
                 StartGame(Manager);
             }
             return;
@@ -109,16 +104,16 @@ namespace EXCell
         public void Lose(string name, int health)
         {
             Manager.WinCount = 0;
-            WriteLine("You lose");
-            WriteLine("The Monster has {0} health left.", health);
+            Console.WriteLine("You lose");
+            Console.WriteLine("The Monster has {0} health left.", health);
             Restart(name);
         }
 
         public void Win(string name, int health)
         {
             Manager.WinCount += 1;
-            WriteLine("You win");
-            WriteLine("{0} have {1} health left .", name, health);
+            Console.WriteLine("You win");
+            Console.WriteLine("{0} have {1} health left .", name, health);
             Continue(name);
         }
     }
