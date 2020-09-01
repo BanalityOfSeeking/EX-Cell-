@@ -13,22 +13,22 @@ namespace EXCell
     public static class SceneManager
     {
         public static string MonsterScene =
-            @"\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/" + "\n" +
-            @"                                      " + "\n" +
-            @"                                      " + "\n" +
-            @"                                      " + "\n" +
-            @"                                      " + "\n" +
-            @"                                      " + "\n" +
-            @"                                      " + "\n" +
+            @"\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/" + "\n" +
+            @"                                        " + "\n" +
+            @"                                        " + "\n" +
+            @"                                        " + "\n" +
+            @"                                        " + "\n" +
+            @"                                        " + "\n" +
+            @"                                        " + "\n" +
             @"    {3}            " + "\n" +
             @"--------{4}------    {10}" + "\n" +
             @"       {5}{6}{7}         {11}" + "\n" +
             @"  | | ({8}_{9})        {12}" + "\n" +
             @"                      " + "\n" +
-            @"|=====================================" + "\n" +
-            @"| Health:{0}  XP:{1}                  " + "\n" +
-            @"| Level {2}                           " + "\n" +
-            @"|=====================================";
+            @"|========================================" + "\n" +
+            @"| Health:{0} XP:{1}| Monster Health:{13} " + "\n" +
+            @"| Level {2}        |                     " + "\n" +
+            @"|========================================";
 
 
         public static string TextScene =
@@ -74,7 +74,8 @@ namespace EXCell
                          game.Player1.Items.Guards.Right(),//9
                          game.Monster1.Unit[0],
                          game.Monster1.Unit[1],
-                         game.Monster1.Unit[2]);
+                         game.Monster1.Unit[2],
+                         game.Monster1.Health.CurrentHealth);
                     break;
                 case SceneType.PlayerSetup:
                     Write(TextScene,
