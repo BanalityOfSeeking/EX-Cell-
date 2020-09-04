@@ -4,15 +4,8 @@ namespace EXCell
     // need to cut scene for item upgrades
     // removed Console reference. (not updated).
 
-    public class PlayerItems : IPlayerItems
+    public struct Items : IItems
     {
-        public PlayerItems()
-        {
-            Hood = new Head();
-            Armor = new Chest();
-            Pads = new Arms();
-            Guards = new Legs();
-        }
 
         public Head Hood { get; internal set; }
         public Chest Armor { get; internal set; }

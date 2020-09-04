@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Security.Policy;
 
 namespace EXCell
 {
-    public partial class Player : IDoDamage<IDamageable>, IDamageable, IBaseEntity, ILevelable
+    public struct BaseEntity : IBaseEntity
     {
+        public BaseEntity(string name, Guid gameId = new Guid())
+        {
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            GameId = gameId;
+        }
 
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public IHealth Health { get; } = new PlayerHealth();
+        public Guid GameId { get; }
+    }
 
-        public IPlayerItems Items { get; set; } = new PlayerItems();
+    public struct Levelable : ILevelable
+    {
+        public int CurrentXP { get; set; }
 
-        public int CurrentXP { get; internal set; } = 0;
-        public int Level { get; internal set; } = 1;
+        public int Level { get; set; }
+
         public void GainExpierence(int XP)
         {
             CurrentXP += XP;
@@ -24,15 +35,16 @@ namespace EXCell
                 Level += 1;
             }
         }
-
-        public void TakeDamage(int amount)
-        {
-            Health.CurrentHealth -= amount;
-        }
-
-        public void DoDamage(IDamageable target)
-        {
-            target.TakeDamage(10);
-        }
     }
+
+    //public struct Playable
+    //{
+    //    public BaseEntity EntityId { get; }
+    //    public Levelable Level { get; }
+    //    public HealthComponent Health { get; }//set; } = new HealthComponent(100,100);
+
+    //    public Items Items { get; }//set; } = new PlayerItems();
+
+    //    public AttackEventHandler AttackEvent { get; }
+    //}
 }

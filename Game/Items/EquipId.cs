@@ -24,5 +24,7 @@ namespace EXCell
         public int Value { get; }
         public int Enchantment { get; }
         public EquipType EquipmentType { get; }
+
+        public Guid GameId { get; } = new Guid();
     }
 }

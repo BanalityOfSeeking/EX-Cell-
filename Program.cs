@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace EXCell
 {
@@ -8,12 +9,17 @@ namespace EXCell
         {
             Console.SetWindowSize(100, 50);
             Console.SetBufferSize(100, 50);
-            Console.Title = "Programming a game 0.1a";
+            Console.Title = "Programming game 0.1b";
+
             GameManager Manager = new GameManager();
 
-            Game ThisGame = new Game()
-            .ConfigureEquipement();
-            Manager.Start(ThisGame);
+            Game game = new Game();
+            game.InitComponentList();
+            game.Components.Add(new ComponentType("Player1", true, 100, true, true));
+            game.Components.Add(new ComponentType("Monster1", true, 100, true, true));
+            game.Components.Add(new ComponentType("GameEnvironment", false, 1, false, false));
+            Manager.Add(game);
+            Manager.StartGame();
         }
     }
 }

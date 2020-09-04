@@ -1,6 +1,6 @@
 ﻿namespace EXCell
 {
-    public interface IPlayerItems
+    public interface IItems
     {
         Chest Armor { get; }
         Legs Guards { get; }

@@ -1,7 +1,11 @@
-﻿namespace EXCell
+﻿using System.Threading;
+
+namespace EXCell
 {
     public interface IGameManager
     {
-        void Start(Game game);
+        void StartGame();
+        void SceneManagerStart();
+
     }
 }

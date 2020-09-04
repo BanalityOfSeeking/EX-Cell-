@@ -29,9 +29,9 @@ namespace EXCell
             new EquipId("Pads", 1, 2, EquipType.LegGuards)
         };
 
-        public static IReadOnlyList<IEquipId> Rules { get; internal set; }
+        private static IReadOnlyList<IEquipId> Rules { get; set; }
 
-        public static IEnumerable<IEquipId> GetItemsOfType(this IEquipment equip)
+        private static IEnumerable<IEquipId> GetItemsOfType(this IEquipment equip)
         {
             if (Rules != default)
             {
