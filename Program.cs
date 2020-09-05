@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Threading;
-
 namespace EXCell
 {
-    internal static class Program
+    internal ref struct Program
     {
         private static void Main(string[] args)
         {
@@ -11,15 +10,16 @@ namespace EXCell
             Console.SetBufferSize(100, 50);
             Console.Title = "Programming game 0.1b";
 
-            GameManager Manager = new GameManager();
+            Entity entity = new Entity();
+            var c = entity.CreateEntityType();
+            c.InitComponentList();
+            c.ComponentList.Add(new Levelable());
 
-            Game game = new Game();
-            game.InitComponentList();
-            game.Components.Add(new ComponentType("Player1", true, 100, true, true));
-            game.Components.Add(new ComponentType("Monster1", true, 100, true, true));
-            game.Components.Add(new ComponentType("GameEnvironment", false, 1, false, false));
-            Manager.Add(game);
-            Manager.StartGame();
+            var m = entity.CreateEntityType();
+
+            c.AttackEvent?.OnDamageEvent(c.Health, ref m.Health);
+
+
         }
     }
 }

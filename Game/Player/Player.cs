@@ -7,34 +7,32 @@ using System.Security.Policy;
 
 namespace EXCell
 {
-    public struct BaseEntity : IBaseEntity
+    /// ECS NOTES
+    /// only THESE TYPES!!!
+    /// Boolean, Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, IntPtr, UIntPtr, Char, Double, and Single
+    /// Entities are only an aggregation of Components, identified by a unique id
+    /// Components are only data
+    /// Systems publish/subscribe to Components, creating behavior
+
+
+    public interface IComponentType
     {
-        public BaseEntity(string name, Guid gameId = new Guid())
-        {
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            GameId = gameId;
-        }
-
-        public string Name { get; }
-
-        public Guid GameId { get; }
+        public int ParentId { get; set; }
     }
-
-    public struct Levelable : ILevelable
+    public static class IComponentExtensions
     {
-        public int CurrentXP { get; set; }
-
-        public int Level { get; set; }
-
-        public void GainExpierence(int XP)
-        {
-            CurrentXP += XP;
-            if (CurrentXP == ILevelable.NextLevel)
-            {
-                CurrentXP = 0;
-                Level += 1;
-            }
+        public static void SetComponent(this EntityType type, IComponentType component)
+        {            
+            component.ParentId = type.ParentId;
         }
+    }
+    public struct Levelable : IComponentType
+    {
+        public int ParentId { get; set; }
+        public int ChildId { get; set; }
+
+        public int CurrentXP;
+        public int Level;
     }
 
     //public struct Playable

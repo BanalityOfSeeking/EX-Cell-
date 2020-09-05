@@ -2,7 +2,7 @@
 
 namespace EXCell
 {
-    internal interface IGameRulesService<T, U>
+    internal interface IGameRulesService<T, U> where T : struct where U : System.Enum
     {
         T ApplyRule(T item);
 
