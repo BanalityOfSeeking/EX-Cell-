@@ -1,4 +1,6 @@
-﻿namespace EXCell
+﻿using System.Collections.Generic;
+
+namespace EXCell
 {
     public static class EntityExtensions
     {
@@ -14,6 +16,15 @@
                     { }
                 }
             }
+        }
+        public static void InitComponentList(this ref EntityType entity)
+        {
+            entity.ComponentList = new List<IComponentType>();
+        }
+
+        public static void update(this ref EntityType entityType)
+        {
+
         }
     }
 }

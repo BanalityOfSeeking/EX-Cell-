@@ -23,28 +23,28 @@ namespace EXCell
 
                 case 1:
                     {
-                        Pads.Id = Pads.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Pads.Id.Name);
+                        Pads.Id = Pads.Id.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Pads.Id);
                         break;
                     }
 
                 case 2:
                     {
-                        Guards.Id = Guards.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Guards.Id.Name);
+                        Guards.Id = Guards.Id.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Guards.Id);
                         break;
                     }
 
                 case 3:
                     {
-                        Hood.Id = Hood.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Hood.Id.Name);
+                        Hood.Id = Hood.Id.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Hood.Id);
                         break;
                     }
                 case 4:
                     {
-                        Armor.Id = Armor.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Armor.Id.Name);
+                        Armor.Id = Armor.Id.ApplyRule();
+                        Console.WriteLine("Recieved {0} upgrade", Armor.Id);
                         break;
                     }
             }

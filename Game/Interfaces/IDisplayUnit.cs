@@ -1,20 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace EXCell
 {
     public interface LeftRight
     {
-        public string Left();
-        public string Right();
+        public char Left();
+        public char Right();
     }
     
     public interface Item
     {
-        char Item { get; }
+        public char Item { get; }
     }
 
     public interface ItemLeftRight : LeftRight
     {
-        string Input { get; }
+        ImmutableList<char> Input { get; set; }
     }
 }

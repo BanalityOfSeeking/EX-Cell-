@@ -2,7 +2,7 @@
 {
     public interface IEquipment
     {
-        public IEquipId Id { get; }
+        public EquipId Id { get; }
 
     }
 }

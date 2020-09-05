@@ -28,7 +28,7 @@ namespace EXCell
         }
         public EntityType CreateEntityType()
         {
-            var et = new EntityType(GenerateGameId(), null);
+            var et = new EntityType(GenerateGameId(), 0);
             if (Entities == default)
             {
                 Entities = new List<EntityType>();
