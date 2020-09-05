@@ -1,7 +1,7 @@
 ﻿namespace EXCell
 {
-    public interface ICarry
+    public interface ICarry : IComponentType
     {
-        bool HasTreasure { get; }
+        bool Treasure { get; }
     }
 }

@@ -17,7 +17,7 @@ namespace EXCell
             c.InitComponentList();
             c.Add(new HealthComponent());
             c.Add(new AttackEventComponent());
-            c.Add(new Levelable());
+            c.Add(new LevelableComponent());
             entity.UpdateEntity(c);
 
             var m = entity.CreateEntityType();

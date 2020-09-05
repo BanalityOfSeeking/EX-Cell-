@@ -15,40 +15,5 @@ namespace EXCell
     /// Systems publish/subscribe to Components, creating behavior
 
 
-    public interface IComponentType
-    {
-        public int ParentId { get; set; }
-    }
-    public static class IComponentExtensions
-    {
-        public static void UpdateEntity(this ref Entity MainEntity, EntityType type)
-        {
-            foreach (var Entity in MainEntity.Entities)
-            {
-                if (Entity.ParentId == type.ParentId)
-                {
-                    MainEntity.Entities.Remove(Entity);
-                    MainEntity.Entities.Add(type);
-                    foreach (var cli in type.ComponentList)
-                    { }
-                }
-            }
-        }
-    }
-    public struct Levelable : IComponentType
-    {
-        public int ParentId { get; set; }
-        public int ChildId { get; set; }
 
-        public int CurrentXP;
-        public int Level;
-
-        public Levelable(int parentId, int childId, int currentXP, int level)
-        {
-            ParentId = parentId;
-            ChildId = childId;
-            CurrentXP = 0;
-            Level = 0;
-        }
-    }
 }
