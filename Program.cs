@@ -10,17 +10,23 @@ namespace EXCell
         {
             Console.SetWindowSize(100, 50);
             Console.SetBufferSize(100, 50);
-            Console.Title = "Programming game 0.1b";
+            Console.Title = "Programming game 0.1c";
 
             Entity entity = new Entity();
-            var c = entity.CreateEntityType();
-            c.InitComponentList();
-            c.Add(new HealthComponent());
-            c.Add(new AttackEventComponent());
-            c.Add(new LevelableComponent());
-            entity.UpdateEntity(c);
+            var ET = entity.CreateEntityType();
+            ET.InitComponentList();
+            ET.Add(new HealthComponent());
+            ET.Add(new AttackEventComponent());
+            ET.Add(new LevelableComponent());
+            ET.Add(new PlayableComponent());
+            entity.UpdateEntity(ET);
 
-            var m = entity.CreateEntityType();
+            var ET2 = entity.CreateEntityType();
+            ET2.InitComponentList();
+            ET2.Add(new HealthComponent());
+            ET2.Add(new AttackEventComponent());
+            ET2.Add(new LevelableComponent());
+            entity.UpdateEntity(ET2);
 
 
 

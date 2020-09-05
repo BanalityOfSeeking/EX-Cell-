@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace EXCell
 {
@@ -6,16 +7,12 @@ namespace EXCell
     {
         public static void UpdateEntity(this ref Entity MainEntity, EntityType type)
         {
-            foreach (var Entity in MainEntity.Entities)
-            {
-                if (Entity.ParentId == type.ParentId)
-                {
-                    MainEntity.Entities.Remove(Entity);
-                    MainEntity.Entities.Add(type);
-                    foreach (var cli in type.ComponentList)
-                    { }
-                }
-            }
+            var Entity = MainEntity.Entities.FirstOrDefault(x => x.ParentId == type.ParentId);
+
+            MainEntity.Entities.Remove(Entity);
+            MainEntity.Entities.Add(type);
+            foreach (var cli in type.ComponentList)
+            { }
         }
         public static void InitComponentList(this ref EntityType entity)
         {
