@@ -4,7 +4,7 @@ namespace EXCell
     // need to cut scene for item upgrades
     // removed Console reference. (not updated).
 
-    public struct Items : IItems
+    public struct Items 
     {
 
         public Head Hood { get; internal set; }

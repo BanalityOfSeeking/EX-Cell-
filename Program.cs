@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks.Dataflow;
+
 namespace EXCell
 {
     internal ref struct Program
@@ -13,11 +15,13 @@ namespace EXCell
             Entity entity = new Entity();
             var c = entity.CreateEntityType();
             c.InitComponentList();
-            c.ComponentList.Add(new Levelable());
+            c.Add(new HealthComponent());
+            c.Add(new AttackEventComponent());
+            c.Add(new Levelable());
+            entity.UpdateEntity(c);
 
             var m = entity.CreateEntityType();
 
-            c.AttackEvent?.OnDamageEvent(c.Health, ref m.Health);
 
 
         }

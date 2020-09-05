@@ -2,17 +2,11 @@
 {
     public static class AttackRegistrationHandler 
     {
-        public static void AttackSetup(this ref ComponentType attacker)
+        public static void AttackSetup(this ref AttackEventComponent attacker)
         {
-            var pa = attacker.AttackEvent ?? null;
-            if (pa != null)
-            {
-                var ae = pa.Value;
-                ae.DoDamageEvent += DoDamage;
-                attacker.AttackEvent = ae;
-            }
+           attacker.DoDamageEvent += DoDamage;       
         }
-        public static void DoDamage(HealthComponent sender, ref HealthComponent reciever)
+        public static void DoDamage(ref AttackEventComponent sender, ref HealthComponent reciever)
         {
             reciever.CurrentHealth -= 10;
         }

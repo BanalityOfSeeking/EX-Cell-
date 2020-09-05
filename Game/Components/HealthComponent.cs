@@ -4,13 +4,13 @@
     {
         public int MaxHealth { get; set; }
         public int CurrentHealth { get; set; }
-        public string Status { get; set; }
+        public int ParentId { get; set; }
 
-        public HealthComponent(int maxHealth, int currentHealth, string status = "unused")
+        public HealthComponent(int parentId, int maxHealth, int currentHealth)
         {
-            MaxHealth = maxHealth;
-            CurrentHealth = currentHealth;
-            Status = status;
+            ParentId = parentId;
+            MaxHealth = 0;
+            CurrentHealth = 0;
         }
     }
 }

@@ -21,9 +21,18 @@ namespace EXCell
     }
     public static class IComponentExtensions
     {
-        public static void SetComponent(this EntityType type, IComponentType component)
-        {            
-            component.ParentId = type.ParentId;
+        public static void UpdateEntity(this ref Entity MainEntity, EntityType type)
+        {
+            foreach (var Entity in MainEntity.Entities)
+            {
+                if (Entity.ParentId == type.ParentId)
+                {
+                    MainEntity.Entities.Remove(Entity);
+                    MainEntity.Entities.Add(type);
+                    foreach (var cli in type.ComponentList)
+                    { }
+                }
+            }
         }
     }
     public struct Levelable : IComponentType
@@ -33,16 +42,13 @@ namespace EXCell
 
         public int CurrentXP;
         public int Level;
+
+        public Levelable(int parentId, int childId, int currentXP, int level)
+        {
+            ParentId = parentId;
+            ChildId = childId;
+            CurrentXP = 0;
+            Level = 0;
+        }
     }
-
-    //public struct Playable
-    //{
-    //    public BaseEntity EntityId { get; }
-    //    public Levelable Level { get; }
-    //    public HealthComponent Health { get; }//set; } = new HealthComponent(100,100);
-
-    //    public Items Items { get; }//set; } = new PlayerItems();
-
-    //    public AttackEventHandler AttackEvent { get; }
-    //}
 }

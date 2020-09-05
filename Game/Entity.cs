@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Security.Policy;
 
+
 namespace EXCell
 {
 
@@ -12,7 +13,9 @@ namespace EXCell
         private static int GameIdBase = 0;
         private static int Increment = 1;
         private static int PrevGameId = -10;
-        public int GenerateGameId()
+
+        public List<EntityType> Entities { get; set; }
+        internal int GenerateGameId()
         {
             if(PrevGameId < 0)
             {
@@ -25,7 +28,13 @@ namespace EXCell
         }
         public EntityType CreateEntityType()
         {
-            return new EntityType();
+            var et = new EntityType(GenerateGameId(), null);
+            if (Entities == default)
+            {
+                Entities = new List<EntityType>();
+            }
+            Entities.Add(et);
+            return et;
         }
     }
 }

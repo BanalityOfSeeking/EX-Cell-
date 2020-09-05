@@ -2,18 +2,20 @@
 
 namespace EXCell
 {
-    public struct AttackEventComponent //: IAttackEventHandler
+    public struct AttackEventComponent : IComponentType
     {
-        public delegate void DmgDelegate(HealthComponent sender, ref HealthComponent reciever);
+        public int ParentId { get; set; }
+
+        public delegate void DmgDelegate(ref AttackEventComponent sender, ref HealthComponent reciever);
 
         public event DmgDelegate DoDamageEvent;
 
-        public void OnDamageEvent(HealthComponent sender, ref HealthComponent reciever)
+        public void OnDamageEvent(ref AttackEventComponent sender, ref HealthComponent reciever)
         {
             DmgDelegate handler = DoDamageEvent;
             if (handler != null)
             {
-                handler(sender, ref reciever);
+                handler(ref sender, ref reciever);
             }
         }
     }
