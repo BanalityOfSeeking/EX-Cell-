@@ -1,7 +1,7 @@
-﻿namespace EXCell
+﻿namespace Game.Components
 {
-    public interface IPlayable : IComponentType
-    {
+    public interface IPlayable
+    { 
         public bool Playable { get; }
     }
 }

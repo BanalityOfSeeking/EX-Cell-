@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EXCell
+﻿namespace Game.Components
 {
-    public interface IComponentType
+    public enum ComponentTypes
     {
-        public int ParentId { get; set; }
-        public int ChildId { get; set; }
+        Stats = 0,
+        Head,
+        Chest,
+        LeftArm,
+        RightArm,
+        LeftLeg,
+        RightLeg,
+        Carry,
+        Display,
+        Health,
+        Attack,
+        Playable,
+        Levelable
+    };
+
+    public interface IComponentType
+    { 
+        ComponentTypes ComponentId { get; }
     }
 }

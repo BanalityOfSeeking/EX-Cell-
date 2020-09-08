@@ -1,8 +1,8 @@
-﻿using EXCell.DataStructure;
+﻿using Game.DataStructure;
 using Microsoft.Extensions.Configuration;
 using SimpleInjector;
 
-namespace EXCell.ConfigurationStore
+namespace Game.ConfigurationStore
 {
     public class WorkBookFactory
     {

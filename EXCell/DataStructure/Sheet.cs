@@ -1,4 +1,4 @@
-﻿using EXCell.ConfigurationStore;
+﻿using Game.ConfigurationStore;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     [Serializable]
     public class Sheet : MarshalByValueComponent, ISheet

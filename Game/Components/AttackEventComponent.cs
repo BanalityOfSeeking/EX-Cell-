@@ -1,23 +1,33 @@
 ﻿using System;
 
-namespace EXCell
+using Game.Components;
+using Game.Entities;
+
+namespace Game
 {
-    public struct AttackEventComponent : IComponentType
+    public class AttackSystem
     {
-        public int ParentId { get; set; }
-        public int ChildId { get; set; }
+        public ComponentManager Manager = new ComponentManager();
+        public static Random AttackRandom = new Random();
+        private EntityId Entity1 { get; }
+        private EntityId Entity2 { get; }
 
-        public delegate void DmgDelegate(ref AttackEventComponent sender, ref HealthComponent reciever);
-
-        public event DmgDelegate DoDamageEvent;
-
-        public void OnDamageEvent(ref AttackEventComponent sender, ref HealthComponent reciever)
+        public static byte Entity1Damage = 10;// Entity 1 Damage
+        public static byte Entity2Damage = 10;  // Entity 2 Defense
+        public int Roll1 => AttackRandom.Next(0, 99);
+        public int Roll2 => AttackRandom.Next(0, 99);
+        public int Modifier1 => -AttackRandom.Next(0, 9);
+        public int Modifier2 => -AttackRandom.Next(0, 9);
+        public EntityId EntityId { get; set; }
+        public void AttackProduce()
         {
-            DmgDelegate handler = DoDamageEvent;
-            if (handler != null)
+            if((Roll1 + Modifier1) > (Roll2 + Modifier2))
             {
-                handler(ref sender, ref reciever);
+                //Manager
+                //hub.Publish((Entity1.Id,
             }
+
+            //hub.Publish((Entity1.Id, );
         }
     }
 }

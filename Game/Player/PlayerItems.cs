@@ -1,55 +1,41 @@
 ﻿using System;
-namespace EXCell
+namespace Game.Components
 {
-    // need to cut scene for item upgrades
-    // removed Console reference. (not updated).
 
-    public struct Items 
+    public interface ITextBodyTemplate
+    { 
+        public char Head { get; set; }
+        public char Chest { get; set; }
+        public char LeftArm { get; set; }
+        public char RightArm { get; set; }
+        public char LeftLeg { get; set; }
+        public char RightLeg { get; set; }
+        public string[] DisplayPart { get; set; }
+    }
+    public class TextBodyTemplate : ITextBodyTemplate
     {
-
-        public Head Hood { get; internal set; }
-        public Chest Armor { get; internal set; }
-        public Arms Pads { get; internal set; }
-        public Legs Guards { get; internal set; }
-
-        public void UpgradeItem(int treasureCode)
+        ComponentManager ComponentManager { get; }
+        public TextBodyTemplate(ComponentManager componentManager)
         {
-            switch (treasureCode)
-            {
-                case 0:
-                    {
-                        break;
-                    }
-
-                case 1:
-                    {
-                        Pads.Id = Pads.Id.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Pads.Id);
-                        break;
-                    }
-
-                case 2:
-                    {
-                        Guards.Id = Guards.Id.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Guards.Id);
-                        break;
-                    }
-
-                case 3:
-                    {
-                        Hood.Id = Hood.Id.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Hood.Id);
-                        break;
-                    }
-                case 4:
-                    {
-                        Armor.Id = Armor.Id.ApplyRule();
-                        Console.WriteLine("Recieved {0} upgrade", Armor.Id);
-                        break;
-                    }
-            }
+            ComponentManager = componentManager;
+        }
+        public void SetupBodyTemplate(char head, char chest, char leftArm, char rightArm, char leftLeg, char rightLeg, string[] displayPart)
+        {
+            Head = head;
+            Chest = chest;
+            LeftArm = leftArm;
+            RightArm = rightArm;
+            LeftLeg = leftLeg;
+            RightLeg = rightLeg;
+            DisplayPart = displayPart;
         }
 
-        public int TotalEnchantments => Hood.Id.Enchantment + Armor.Id.Enchantment + Guards.Id.Enchantment + Pads.Id.Enchantment;
+        public char Head { get; set; }
+        public char Chest { get; set; }
+        public char LeftArm { get; set; }
+        public char RightArm { get; set; }
+        public char LeftLeg { get; set; }
+        public char RightLeg { get; set; }
+        public string[] DisplayPart { get; set; }
     }
 }

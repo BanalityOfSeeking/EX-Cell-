@@ -1,9 +1,9 @@
-﻿namespace EXCell
+﻿namespace Game.Components
 {
-    public struct PlayableComponent : IPlayable
+    public class PlayableComponent : IComponentType
     {
-        public bool Playable => true;
-        public int ParentId { get; set; }
-        public int ChildId { get; set; }
+        public bool Playable { get; set; }
+
+        public ComponentTypes ComponentId => ComponentTypes.Playable;
     }
 }

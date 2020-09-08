@@ -1,19 +1,10 @@
-﻿namespace EXCell
+﻿namespace Game.Components
 {
-    public struct LevelableComponent : IComponentType
+    public class LevelableComponent : IComponentType
     {
-        public int ParentId { get; set; }
-        public int ChildId { get; set; }
+        public byte CurrentXP { get; internal set; }
+        public byte Level { get; internal set; }
 
-        public int CurrentXP;
-        public int Level;
-
-        public LevelableComponent(int parentId, int childId, int currentXP, int level)
-        {
-            ParentId = parentId;
-            ChildId = childId;
-            CurrentXP = 0;
-            Level = 0;
-        }
+        public ComponentTypes ComponentId => ComponentTypes.Levelable;
     }
 }

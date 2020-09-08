@@ -11,12 +11,13 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Optimize>false</Optimize>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <Optimize>false</Optimize>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +36,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.7" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="3.1.7" />
     <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="3.1.7" />
+    <PackageReference Include="PubSub" Version="4.0.1" />
     <PackageReference Include="SimpleInjector" Version="5.0.3" />
   </ItemGroup>
 

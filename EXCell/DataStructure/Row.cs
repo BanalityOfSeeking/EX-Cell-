@@ -1,9 +1,9 @@
-﻿using EXCell.ConfigurationStore;
+﻿using Game.ConfigurationStore;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public class ReadOnlyRow : IReadOnlyRow
     {

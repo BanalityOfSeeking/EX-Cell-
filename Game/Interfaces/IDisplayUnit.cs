@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 
-namespace EXCell
+namespace Game.Components
 {
     public interface LeftRight
     {
@@ -12,11 +11,11 @@ namespace EXCell
     
     public interface Item
     {
-        public char Item { get; }
+        public char Item { get; set; }
     }
 
     public interface ItemLeftRight : LeftRight
     {
-        ImmutableList<char> Input { get; set; }
+        List<char> Input { get; set; }
     }
 }

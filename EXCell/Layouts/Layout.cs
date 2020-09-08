@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace EXCell.Layouts
+namespace Game.Layouts
 {
     public static class Layout
     {

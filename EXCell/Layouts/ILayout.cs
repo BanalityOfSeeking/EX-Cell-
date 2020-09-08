@@ -1,9 +1,9 @@
 ﻿// ***********************************************************************
 
-using EXCell.DataStructure;
+using Game.DataStructure;
 using System.Collections.Generic;
 
-namespace EXCell.Layouts
+namespace Game.Layouts
 {
     public interface ILayout
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public interface IGameSheet
     {

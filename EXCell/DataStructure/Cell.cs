@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     /// <summary>
     /// Cell stores a dynamic value.

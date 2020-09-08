@@ -1,4 +1,4 @@
-﻿namespace EXCell.DataStructure
+﻿namespace Game.DataStructure
 {
     public interface ICell
     {

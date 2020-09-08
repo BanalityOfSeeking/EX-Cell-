@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public interface IParam
     {

@@ -1,16 +1,17 @@
-﻿using System;
+﻿
+using System;
 
-namespace EXCell
+namespace Game.Components
 {
     public enum EquipType
     {
         Helmets = 0,
-        Armors,
-        Weapons,
-        LegGuards
+        Armors = 1,
+        Weapons = 2,
+        LegGuards = 3
     }
 
-    public struct EquipId : IEquipId
+    public class EquipId : IEquipId
     {
         public EquipId(int value, int enchantment, EquipType equip)
         {

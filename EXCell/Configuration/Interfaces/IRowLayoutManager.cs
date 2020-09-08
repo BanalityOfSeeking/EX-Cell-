@@ -1,4 +1,4 @@
-﻿namespace EXCell.ConfigurationStore
+﻿namespace Game.ConfigurationStore
 {
     public interface IRowLayoutManager
     {

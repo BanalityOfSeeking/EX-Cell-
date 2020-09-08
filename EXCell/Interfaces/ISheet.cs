@@ -1,11 +1,11 @@
-﻿using EXCell.ConfigurationStore;
+﻿using Game.ConfigurationStore;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public interface ISheet : IListSource, ISupportInitializeNotification, ISerializable, IXmlSerializable
     {

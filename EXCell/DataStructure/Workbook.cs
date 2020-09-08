@@ -1,8 +1,8 @@
-﻿using EXCell.ConfigurationStore;
+﻿using Game.ConfigurationStore;
 using Microsoft.Extensions.Configuration;
 using System.Data;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public class Workbook : IWorkbook
     {

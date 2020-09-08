@@ -1,10 +1,10 @@
-﻿namespace EXCell
+﻿namespace Game.Components
 {
-    public struct CarryComponent : ICarry
+    public struct CarryTreasureComponent : ICarryTreasure, IComponentType
     {
-        public bool Treasure { get; set; }
+        public byte Treasure { get; set; }
+        public EquipType Equip { get; set; }
 
-        public int ParentId { get; set; }
-        public int ChildId { get; set; }
+        public ComponentTypes ComponentId => ComponentTypes.Carry;
     }
 }

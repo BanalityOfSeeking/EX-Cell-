@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public interface IReadOnlyRow
     {

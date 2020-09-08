@@ -1,7 +1,7 @@
-﻿using EXCell.DataStructure;
+﻿using Game.DataStructure;
 using System.Collections.Generic;
 
-namespace EXCell.ConfigurationStore
+namespace Game.ConfigurationStore
 {
     public class CellConfiguration : ICellConfiguration
     {

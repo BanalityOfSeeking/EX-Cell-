@@ -1,8 +1,8 @@
-﻿using EXCell.DataStructure;
+﻿using Game.DataStructure;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EXCell.ConfigurationStore
+namespace Game.ConfigurationStore
 {
     public interface ICellConfiguration
     {

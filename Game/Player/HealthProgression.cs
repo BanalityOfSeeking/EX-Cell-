@@ -1,4 +1,4 @@
-﻿namespace EXCell
+﻿namespace Game
 {
     public enum HealthProgression
     {

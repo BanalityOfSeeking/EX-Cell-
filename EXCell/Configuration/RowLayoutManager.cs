@@ -1,6 +1,6 @@
-﻿using EXCell.DataStructure;
+﻿using Game.DataStructure;
 
-namespace EXCell.ConfigurationStore
+namespace Game.ConfigurationStore
 {
     public class RowLayoutManager : IRowLayoutManager
     {

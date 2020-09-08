@@ -1,8 +1,8 @@
-﻿using EXCell.ConfigurationStore;
+﻿using Game.ConfigurationStore;
 using System;
 using System.Collections.Generic;
 
-namespace EXCell.DataStructure
+namespace Game.DataStructure
 {
     public interface IParamBuilder
     {
