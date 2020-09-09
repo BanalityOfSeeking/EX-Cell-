@@ -1,6 +1,8 @@
-﻿namespace Game.Components
+﻿using System;
+
+namespace Game.Components
 {
-    public class RightArmComponent : IEquipment, Item, IComponentType
+    public class RightArmComponent : IEquipment, Item, IComponentType, IRightArmComponent
     {
         public EquipId Id { get; set; }
 

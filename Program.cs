@@ -1,5 +1,5 @@
 ﻿using Game.Components;
-using Game.Stages;
+
 using System;
 using System.Collections.Immutable;
 using System.Linq;
@@ -17,8 +17,8 @@ namespace Game
             Console.SetBufferSize(100, 50);
             Console.Title = "My Programming game 0.1d";
             ComponentManager componentManager = new ComponentManager();
-            var SceneHost = new StageHost();
-            componentManager.AssignRequiredRoles(SceneHost);
+            BodySystem bs = new BodySystem();
+            componentManager.DeliverBody();
 
         }
     }

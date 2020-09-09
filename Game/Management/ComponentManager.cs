@@ -1,58 +1,39 @@
 ﻿using Game.Entities;
-using Game.Stages;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.ObjectPool;
-using System;
+using Game.Components;
 using System.Collections.Generic;
 
-namespace Game.Components
+namespace Game.Manager
 {
-    public enum EntityRoles
-    {
-        NPC = 0, PLAYER, MONSTER, CHEST
-    }
 
     public class ComponentManager
     {
-        private EntityManager Entities { get; } 
-        private ObjectPool<HealthComponent> HealthPool = ObjectPool.Create<HealthComponent>();
-        private ObjectPool<PlayableComponent> PlayablePool = ObjectPool.Create<PlayableComponent>();
-        private ObjectPool<LevelableComponent> LevelablePool = ObjectPool.Create<LevelableComponent>();
-
-        HealthComponent GetHealthComponent() => HealthPool.Get();
-
-        PlayableComponent GetPlayableComponent() => PlayablePool.Get();
-
-        LevelableComponent GetLevelableComponent() => LevelablePool.Get();
-
-
-        public int ActiveEntities = 0;
-        public Dictionary<int, IComponentType[]> EntityMappings { get; }
-        private Dictionary<int, IComponentType[]> EntityPriorStates { get; }
+        public void RequestComponent<T>(EntityId entityId) where T : IComponentType, new()
+        {
+            if(EntityMappings.TryGetValue(entityId, out IList<IComponentType> componentList))
+            {
+                componentList.Add(new T());
+            }
+            else
+            {
+                var MappingList = new List<IComponentType>();
+                MappingList.Add(new T());
+                EntityMappings.Add(entityId, MappingList);
+            }
+        }
+        public bool DestroyEntityComponents(EntityId entityId)
+        {
+            if (EntityMappings.ContainsKey(entityId))
+            {
+                EntityMappings.Remove(entityId);
+                return true;
+            }
+            return false;
+        }
+        public Dictionary<EntityId, IList<IComponentType>> EntityMappings { get; }
 
         public ComponentManager()
         {
-            Entities = new EntityManager();
-            EntityMappings = new Dictionary<int, IComponentType[]>();
-            EntityPriorStates = new Dictionary<int, IComponentType[]>();
-        }
-        public StageHost AssignRequiredRoles(StageHost stage)
-        {
-            foreach (var role in stage.RequiredRoles)
-            {
-                var entityId = Entities.CreateEntityId().Value;
-
-                IComponentType[] defReturn = new IComponentType[] 
-                { GetHealthComponent(), GetLevelableComponent() };
-                var Actor = role switch
-                {
-                    EntityRoles.PLAYER => defReturn,
-                    EntityRoles.MONSTER => defReturn,
-                    _ => defReturn
-                };
-                stage.AddEntity(entityId, Actor);
-            }
-            return stage;    
+            EntityMappings = new Dictionary<EntityId, IList<IComponentType>>();
         }
     }
 }

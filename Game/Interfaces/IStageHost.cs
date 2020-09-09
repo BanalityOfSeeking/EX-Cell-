@@ -2,7 +2,7 @@
 using Game.Entities;
 using System.Collections.Generic;
 
-namespace Game.Stages
+namespace Game.Systems.Stages
 {
     public interface IStageHost
     {

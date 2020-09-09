@@ -1,6 +1,6 @@
 ﻿namespace Game.Components
 {
-    public class PlayableComponent : IComponentType
+    public class PlayableComponent : IComponentType, IPlayableComponent
     {
         public bool Playable { get; set; }
 
