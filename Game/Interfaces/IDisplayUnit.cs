@@ -11,7 +11,7 @@ namespace Game.Components
     
     public interface Item
     {
-        public char Item { get; set; }
+        public char[] Item { get; set; }
     }
 
     public interface ItemLeftRight : LeftRight

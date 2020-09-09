@@ -26,7 +26,7 @@ namespace Game
                 EntityMappings.Add(entityId, MappingList);
             }
         }
-        public static void RequestCompoents<T>(in int entityId, IList<IComponentType> requests)
+        public static void RequestCompoents<T>(int entityId, IList<IComponentType> requests)
         {
             if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
             {

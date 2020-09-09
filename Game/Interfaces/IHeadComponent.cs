@@ -4,6 +4,6 @@
     {
         ComponentTypes ComponentId { get; }
         EquipId Id { get; set; }
-        char Item { get; set; }
+        char[] Item { get; set; }
     }
 }

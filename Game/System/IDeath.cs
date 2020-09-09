@@ -1,6 +1,6 @@
 ﻿using Game.Components;
 
-namespace Game.Systems.Death
+namespace Game.Systems
 {
     public interface IDeath
     {

@@ -2,6 +2,7 @@
 using Game.Systems;
 using System;
 using System.Collections.Immutable;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading;
@@ -13,11 +14,10 @@ namespace Game
     {
         private static void Main(string[] args)
         {
-            Console.SetWindowSize(100, 50);
-            Console.SetBufferSize(100, 50);
-            Console.Title = "My Programming game 0.1d";
+            Console.SetWindowSize(40, 25);
+            Console.SetBufferSize(40, 25);
             int? Id = EntityManager.CreateEntityId();
-            if(Id.HasValue)
+            if (Id.HasValue)
             {
                 ComponentManager.RequestComponent<HeadComponent>(Id.Value);
                 ComponentManager.RequestComponent<LeftArmComponent>(Id.Value);
