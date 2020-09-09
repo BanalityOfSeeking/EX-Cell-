@@ -2,13 +2,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Game.Systems
 {
-    public class EquipmentSystem
+    public static class EquipmentSystem
     {
 
-        internal static readonly IReadOnlyList<EquipId> ProgressionList = new List<EquipId>()
+        private static readonly IReadOnlyList<EquipId> ProgressionList = new List<EquipId>()
         {
                 //head
             new EquipId(0, 0, EquipType.Helmets),
@@ -32,20 +33,29 @@ namespace Game.Systems
 
         private static IReadOnlyList<EquipId> Rules { get => ProgressionList; }
 
-        public IEnumerable<EquipId> GetItemsOfType(EquipId equip)
+        public static IEnumerable<EquipId> GetItemsOfType(EquipId equip)
         {
-            foreach(var li in Rules)
-            {
-                yield return li;
-            }
+            return from rule in Rules
+                   where rule.EquipmentType.Equals(equip.EquipmentType)
+                   select rule;
         }
 
-        public EquipId RuleUpdater(EquipId equip)
+        public static EquipId ApplyRule(EquipId equip, EquipType equipType)
         {
-            IEnumerable<EquipId> items = GetItemsOfType(equip);
-            foreach(var item in items)
+            IEnumerable<EquipId> items;
+            var Item = new EquipId(-1, -1, equipType);
+            if (equipType == EquipType.Default)
             {
-                if (item.Value == equip.Value + 1)
+                items = GetItemsOfType(equip);
+            }
+            else 
+            {
+                
+                items = GetItemsOfType(Item);
+            }
+            foreach (var item in items)
+            {
+                if (item.Value == Item.Value + 1)
                 {
                     return item;
                 }

@@ -1,24 +1,19 @@
 ﻿
-using Game.Entities;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 
-namespace Game.Manager.Entities
+namespace Game
 {
     public interface IEntityManager
     {
-        EntityId? CreateEntityId();
-        void DestroyEntityId(EntityId entityId);
+        int? CreateEntityId();
+        void DestroyEntityId(int entityId);
     }
 
-    public class EntityManager : IEntityManager
+    public static class EntityManager
     {
-        private Hashtable UsedEntities = new Hashtable();
-        public EntityManager()
-        {
-        }
-        public EntityId? CreateEntityId()
+        private static Hashtable UsedEntities = new Hashtable();
+
+        public static int? CreateEntityId()
         {
            
             int AvailableId = 1;
@@ -27,15 +22,15 @@ namespace Game.Manager.Entities
                 if (!UsedEntities.Contains(AvailableId))
                 { 
                     UsedEntities.Add(AvailableId, AvailableId);
-                    return new EntityId(AvailableId);
+                    return AvailableId;
                 }
                 AvailableId++;
             } while (AvailableId < 64);
             return null;
         }
-        public void DestroyEntityId(EntityId entityId)
+        public static void DestroyEntityId(int entityId)
         {
-            UsedEntities.Remove(entityId.Id);
+            UsedEntities.Remove(entityId);
         }
     }
 }

@@ -5,10 +5,11 @@ namespace Game.Components
 {
     public enum EquipType
     {
-        Helmets = 0,
-        Armors = 1,
-        Weapons = 2,
-        LegGuards = 3
+        Default = 0,
+        Helmets = 1,
+        Armors = 2,
+        Weapons = 3,
+        LegGuards = 4
     }
 
     public class EquipId : IEquipId

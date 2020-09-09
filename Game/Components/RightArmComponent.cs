@@ -8,6 +8,6 @@ namespace Game.Components
 
         public char Item { get; set; }
 
-        public ComponentTypes ComponentId => ComponentTypes.LeftArm;
+        public ComponentTypes ComponentId => ComponentTypes.RightArm;
     }
 }

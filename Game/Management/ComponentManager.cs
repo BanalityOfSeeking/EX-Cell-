@@ -1,26 +1,46 @@
-﻿using Game.Entities;
-using Game.Components;
+﻿using Game.Components;
 using System.Collections.Generic;
 
-namespace Game.Manager
+namespace Game
 {
 
-    public class ComponentManager
+    public static class ComponentManager
     {
-        public void RequestComponent<T>(EntityId entityId) where T : IComponentType, new()
+        public static void RequestComponent<T>(int entityId) where T : IComponentType, new()
         {
-            if(EntityMappings.TryGetValue(entityId, out IList<IComponentType> componentList))
+            if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
             {
-                componentList.Add(new T());
+                for(int i = 0; i < componentList.Length; i++)
+                {
+                    if(componentList[i] == null)
+                    {
+                        componentList[i] = new T();
+                        break;
+                    }
+                }
             }
             else
             {
-                var MappingList = new List<IComponentType>();
-                MappingList.Add(new T());
+                var MappingList = new IComponentType[20];
+                MappingList[0] = new T();
                 EntityMappings.Add(entityId, MappingList);
             }
         }
-        public bool DestroyEntityComponents(EntityId entityId)
+        public static void RequestCompoents<T>(in int entityId, IList<IComponentType> requests)
+        {
+            if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
+            {
+                requests.CopyTo(componentList, componentList.Length);
+            }
+            else
+            {
+                var MappingList = new IComponentType[requests.Count];
+                requests.CopyTo(MappingList, 0);
+                EntityMappings.Add(entityId, MappingList);
+            }
+        }
+
+        public static bool DestroyEntityComponents(int entityId)
         {
             if (EntityMappings.ContainsKey(entityId))
             {
@@ -29,11 +49,18 @@ namespace Game.Manager
             }
             return false;
         }
-        public Dictionary<EntityId, IList<IComponentType>> EntityMappings { get; }
 
-        public ComponentManager()
+        private static Dictionary<int, IComponentType[]> EntityMappings = new Dictionary<int, IComponentType[]>();
+
+        public static bool TryGetEntityComponents(int entityId, out IList<IComponentType> components)
         {
-            EntityMappings = new Dictionary<EntityId, IList<IComponentType>>();
+            if (EntityMappings.TryGetValue(entityId, out IComponentType[] types))
+            {
+                components = types;
+                return true;
+            }
+            components = default;
+            return false;
         }
     }
 }
