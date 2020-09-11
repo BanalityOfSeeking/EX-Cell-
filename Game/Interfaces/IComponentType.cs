@@ -19,6 +19,11 @@
 
     public interface IComponentType
     { 
-        ComponentTypes ComponentId { get; }
+        ComponentTypes ComponentId { get; set; }
+    }
+    public interface IBodyComponent
+    {
+        public IPartComponent[] BodyParts { get; set; }
+        public ComponentTypes[] PartTypes { get; set; }
     }
 }

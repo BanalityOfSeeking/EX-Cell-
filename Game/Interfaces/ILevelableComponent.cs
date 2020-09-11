@@ -2,8 +2,7 @@
 {
     public interface ILevelableComponent
     {
-        ComponentTypes ComponentId { get; }
-        int CurrentXP { get; }
-        int Level { get; }
+        int CurrentXP { get; set; }
+        int Level { get; set; }
     }
 }

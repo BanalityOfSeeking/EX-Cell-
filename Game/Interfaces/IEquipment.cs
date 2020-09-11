@@ -2,7 +2,12 @@
 {
     public interface IEquipment
     {
-        public EquipId Id { get; }
+        public int Value { get; }
+        public int Enchantment { get; }
 
+    }
+    public interface IEquipType
+    {
+        public EquipTypes EquipType { get; }
     }
 }

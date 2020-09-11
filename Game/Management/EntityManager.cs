@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 
 namespace Game
 {
@@ -7,13 +6,15 @@ namespace Game
     {
         int? CreateEntityId();
         void DestroyEntityId(int entityId);
+        int Test { get; set; }
     }
 
-    public static class EntityManager
+    public class EntityManager : IEntityManager
     {
-        private static Hashtable UsedEntities = new Hashtable();
+        public int Test { get; set; }
+        private Hashtable UsedEntities = new Hashtable();
 
-        public static int? CreateEntityId()
+        public int? CreateEntityId()
         {
            
             int AvailableId = 1;
@@ -28,7 +29,7 @@ namespace Game
             } while (AvailableId < 64);
             return null;
         }
-        public static void DestroyEntityId(int entityId)
+        public void DestroyEntityId(int entityId)
         {
             UsedEntities.Remove(entityId);
         }

@@ -3,6 +3,6 @@
     public interface ICarryTreasure
     { 
         byte Treasure { get; }
-        EquipType Equip { get; }
+        EquipTypes Equip { get; }
     }
 }

@@ -1,10 +1,9 @@
 ﻿namespace Game.Components
 {
-    public class LevelableComponent : IComponentType, ILevelableComponent
+    public class LevelableComponent : ILevelableComponent
     {
-        public int CurrentXP { get; internal set; }
-        public int Level { get; internal set; }
+        public int CurrentXP { get; set; }
+        public int Level { get; set; }
 
-        public ComponentTypes ComponentId => ComponentTypes.Levelable;
     }
 }

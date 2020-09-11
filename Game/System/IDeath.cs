@@ -7,11 +7,16 @@ namespace Game.Systems
         public void Death(int Id);
     }
 
-    public static class DeathSystem
+    public class DeathSystem : IDeath
     {
-        public static void Death(int Id)
+        private IEntityManager RequestEntity { get; } 
+        public DeathSystem(IEntityManager manager)
         {
-            EntityManager.DestroyEntityId(Id);
+            RequestEntity = manager;
+        }
+        public void Death(int Id)
+        {
+            RequestEntity .DestroyEntityId(Id);
         }
     }
 }

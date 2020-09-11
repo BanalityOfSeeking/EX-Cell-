@@ -16,18 +16,26 @@ namespace Game
         {
             Console.SetWindowSize(40, 25);
             Console.SetBufferSize(40, 25);
-            int? Id = EntityManager.CreateEntityId();
-            if (Id.HasValue)
-            {
-                ComponentManager.RequestComponent<HeadComponent>(Id.Value);
-                ComponentManager.RequestComponent<LeftArmComponent>(Id.Value);
-                ComponentManager.RequestComponent<RightArmComponent>(Id.Value);
-                ComponentManager.RequestComponent<ChestComponent>(Id.Value);
-                ComponentManager.RequestComponent<LeftLegComponent>(Id.Value);
-                ComponentManager.RequestComponent<RightLegComponent>(Id.Value);
-            }
-            GameBodySystem.RegisterBody(Id.Value);
+            ContainerFactory factory = new ContainerFactory();
+            var Container = factory.GetContainer();
+            Container.Register<BodySystem>();
+            Container.Register(typeof(InjectBodyParts));
+            Container.GetInstance<InjectBodyParts>();
 
         }
+    }
+    internal class InjectBodyParts
+    {
+        IBodyComponent BodyComponents { get; }
+        public InjectBodyParts(BodySystem bodyComponents)
+        {
+            BodyComponents = bodyComponents;
+        }
+        IPartComponent Head { get => BodyComponents.BodyParts?[0]; }
+        IPartComponent Chest { get => BodyComponents.BodyParts?[1]; }
+        IPartComponent LeftArm { get => BodyComponents.BodyParts?[2]; }
+        IPartComponent RightArm { get => BodyComponents.BodyParts?[3]; }
+        IPartComponent LeftLeg { get => BodyComponents.BodyParts?[4]; }
+        IPartComponent RightLeg { get => BodyComponents.BodyParts?[5]; }
     }
 }

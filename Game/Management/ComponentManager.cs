@@ -1,6 +1,8 @@
 ﻿using Game.Components;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.Linq;
+using PubSub;
 namespace Game
 {
 
@@ -10,12 +12,11 @@ namespace Game
         {
             if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
             {
-                for(int i = 0; i < componentList.Length; i++)
+                for (int i = 0; i < componentList.Length; i++)
                 {
-                    if(componentList[i] == null)
+                    if (componentList[i] == null)
                     {
                         componentList[i] = new T();
-                        break;
                     }
                 }
             }
@@ -26,7 +27,7 @@ namespace Game
                 EntityMappings.Add(entityId, MappingList);
             }
         }
-        public static void RequestCompoents<T>(int entityId, IList<IComponentType> requests)
+        public static void RequestComponents<T>(int entityId, IList<IComponentType> requests)
         {
             if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
             {
@@ -52,15 +53,28 @@ namespace Game
 
         private static Dictionary<int, IComponentType[]> EntityMappings = new Dictionary<int, IComponentType[]>();
 
-        public static bool TryGetEntityComponents(int entityId, out IList<IComponentType> components)
+
+        public static IEnumerable<(int Id, IComponentType component)> GetComponents()
         {
-            if (EntityMappings.TryGetValue(entityId, out IComponentType[] types))
+            foreach (var kvp in EntityMappings)
             {
-                components = types;
-                return true;
+                foreach (var value in kvp.Value)
+                {
+                    yield return (kvp.Key, value);
+                }
             }
-            components = default;
-            return false;
+        }
+        public static void ProcessComponents()
+        {
+
+            foreach(var x in GetComponents())
+            {
+                // Assign Id a role in game
+                // Assign Id Needed components to fulfil game role 
+                // Assign stage display requirements first (World | Path(s) | Environments props | Chests | Entrance
+                // Assign Monsters ( stats | weapons | loot | Location (x, y, x ))
+                // Assign Player resources over environment ( stats | weapons | loot | Location (x, y, x ))
+            }
         }
     }
 }
