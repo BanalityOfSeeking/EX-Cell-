@@ -21,6 +21,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EXCell\**" />
+    <EmbeddedResource Remove="EXCell\**" />
+    <None Remove="EXCell\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Settings.xml" />
   </ItemGroup>
 

@@ -12,13 +12,16 @@ Understand how I can group and optimize the bad code and make better good code d
 
 			Game Start Flow
 
-Character Selection screen => Character Stat Screen => World Start 
-=> Request Entities => Add ArchType To Entities => Add components to entities (ComponentArchTypeManager)
-=> fill Components Bodies (BodyArchSystem) => fill Weapons Components (WeaponArchSystem) => LootSystem
-=> fill environment => place player & monster (init IOSystem , Init Camera / ViewPort (system) (x,y, fixed z)no clue yet ) => 
+			*Initialize Resources*
+init I/O System
+Character Selection screen => Character Stat Screen => World Start => Init Stage System =>
+=> Request Entities => Assign ArchType To Entities => Assign this entities ArchType to its base components 
+(ComponentArchTypeManager) <=set loot  here for monsters, no loot system except for exchange or data.
+ => place player & monsters => generate scene around player and monster locations
+=> AI?? | IO => animate Bodies (BodyAnimationSystem) 
 ?? more stuff... yet to think of.. 
  
-initialization complete => Stage Start
+initialization complete => Stage restart at animate bodies.
                               
 
 StageSystem(Requirements for ECS flow from here) will be Main Game loop the main loop area.
