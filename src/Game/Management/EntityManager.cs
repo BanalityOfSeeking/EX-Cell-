@@ -6,13 +6,11 @@ namespace Game
     {
         int? CreateEntityId();
         void DestroyEntityId(int entityId);
-        int Test { get; set; }
     }
 
     public class EntityManager : IEntityManager
     {
-        public int Test { get; set; }
-        private Hashtable UsedEntities = new Hashtable();
+        public Hashtable UsedEntities = new Hashtable();
 
         public int? CreateEntityId()
         {

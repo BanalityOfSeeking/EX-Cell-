@@ -8,7 +8,7 @@ namespace Game.Systems
 {
     public class EquipmentSystem
     {
-
+        /*
         private IReadOnlyList<(EntityRoles, PartComponent)> ProgressionList = new List<(EntityRoles, PartComponent)>()
         {
             // Default Head.
@@ -53,5 +53,7 @@ namespace Game.Systems
         {
             return new PartComponent();
         }
+    }
+        */
     }
 }

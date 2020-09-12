@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using PubSub;
+using System;
+using System.Windows.Input;
+
 namespace Game
 {
 
-    public static class ComponentManager
+    public class ComponentManager : IDisposable
     {
-        public static void RequestComponent<T>(int entityId) where T : IComponentType, new()
+        public void RequestComponent<T>(int entityId, T Type = default) where T : struct, IComponentType
         {
             if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
             {
@@ -27,7 +30,7 @@ namespace Game
                 EntityMappings.Add(entityId, MappingList);
             }
         }
-        public static void RequestComponents<T>(int entityId, IList<IComponentType> requests)
+        public void RequestComponents<T>(int entityId, IComponentType[] requests) where T : struct, IComponentType
         {
             if (EntityMappings.TryGetValue(entityId, out IComponentType[] componentList))
             {
@@ -35,13 +38,13 @@ namespace Game
             }
             else
             {
-                var MappingList = new IComponentType[requests.Count];
+                var MappingList = new IComponentType[requests.Length];
                 requests.CopyTo(MappingList, 0);
                 EntityMappings.Add(entityId, MappingList);
             }
         }
 
-        public static bool DestroyEntityComponents(int entityId)
+        public bool DestroyEntityComponents(int entityId)
         {
             if (EntityMappings.ContainsKey(entityId))
             {
@@ -51,10 +54,10 @@ namespace Game
             return false;
         }
 
-        private static Dictionary<int, IComponentType[]> EntityMappings = new Dictionary<int, IComponentType[]>();
+        public Dictionary<int, IComponentType[]> EntityMappings = new Dictionary<int, IComponentType[]>();
+        private bool disposedValue;
 
-
-        public static IEnumerable<(int Id, IComponentType component)> GetComponents()
+        public IEnumerable<(int Id, IComponentType component)> GetComponents()
         {
             foreach (var kvp in EntityMappings)
             {
@@ -64,7 +67,7 @@ namespace Game
                 }
             }
         }
-        public static void ProcessComponents()
+        public void ProcessComponents()
         {
 
             foreach(var x in GetComponents())
@@ -75,6 +78,35 @@ namespace Game
                 // Assign Monsters ( stats | weapons | loot | Location (x, y, x ))
                 // Assign Player resources over environment ( stats | weapons | loot | Location (x, y, x ))
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: dispose managed state (managed objects)
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override finalizer
+                // TODO: set large fields to null
+                disposedValue = true;
+            }
+        }
+
+        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
+        // ~ComponentManager()
+        // {
+        //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        //     Dispose(disposing: false);
+        // }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }
