@@ -4,19 +4,17 @@ namespace Game.Systems
 {
     public interface IDeath
     {
-        public void Death(int Id);
+        public void Death(short id);
     }
 
     public class DeathSystem : IDeath
     {
-        private IEntityManager RequestEntity { get; } 
-        public DeathSystem(IEntityManager manager)
+        public DeathSystem()
         {
-            RequestEntity = manager;
         }
-        public void Death(int Id)
+
+        public void Death(short id)
         {
-            RequestEntity .DestroyEntityId(Id);
         }
     }
 }

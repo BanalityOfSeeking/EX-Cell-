@@ -6,8 +6,4 @@
         public int Enchantment { get; }
 
     }
-    public interface IEquipType
-    {
-        public EquipTypes EquipType { get; }
-    }
 }

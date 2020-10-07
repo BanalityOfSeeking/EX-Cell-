@@ -1,8 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
     <Nullable>disable</Nullable>
     <StartupObject></StartupObject>
   </PropertyGroup>
@@ -19,12 +20,6 @@
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="EXCell\**" />
-    <EmbeddedResource Remove="EXCell\**" />
-    <None Remove="EXCell\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Settings.xml" />
@@ -44,14 +39,17 @@
   
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.1.7" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.7" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="3.1.7" />
-    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="3.1.7" />
-    <PackageReference Include="PubSub" Version="4.0.1" />
+    <PackageReference Include="NoAlloq" Version="0.1.0" />
     <PackageReference Include="SimpleInjector" Version="5.0.3" />
-    <PackageReference Include="System.Composition.AttributedModel" Version="1.4.1" />
+    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
+    <PackageReference Include="System.Composition.AttributedModel" Version="5.0.0-rc.1.20451.14" />
+  </ItemGroup>
+  
+  
+  <ItemGroup>
+    <Reference Include="Enderlook.StateMachine">
+      <HintPath>..\Net-State-Machine\State Machine\bin\Debug\netcoreapp3.1\Enderlook.StateMachine.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

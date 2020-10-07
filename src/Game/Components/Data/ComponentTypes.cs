@@ -9,11 +9,5 @@
         RightArm,
         LeftLeg,
         RightLeg,
-        Carry,
-        Display,
-        Health,
-        Attack,
-        Playable,
-        Levelable
     };
 }
